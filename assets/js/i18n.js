@@ -6,19 +6,19 @@ window.SPARK_I18N = {
   zh: {
     htmlLang: 'zh-CN',
     meta: {
-      title: 'Spark Unlimited Investment｜让火花成为无限',
+      title: 'Spark Unlimited Investment｜让星火成为无限',
       desc: 'Spark Unlimited Investment 是专注早期与成长期的风险投资机构，投资先进科技、先进消费与独立创作者。'
     },
     a11y: { skip: '跳到正文', menu: '菜单', close: '关闭', lang: '切换语言', nav: '主导航' },
     nav: { about: '介绍', mission: '使命愿景', focus: '投资方向', team: '管理团队', contact: '联系我们' },
     hero: {
-      title: '让火花<br>成为无限',
+      title: '让星火<br>成为无限',
       lede: 'Spark Unlimited Investment 是专注早期与成长期的风险投资机构。我们在想法刚刚点燃的时候入场，以长期资本陪伴先进科技、先进消费与独立创作者。',
       scroll: '向下滚动'
     },
     about: {
       label: '介绍',
-      statement: '我们相信，改变世界的公司最初都只是火花：尚未被验证的技术，还没有品类名的产品，独自动手的创作者。',
+      statement: '我们相信，改变世界的公司最初都只是星火：尚未被验证的技术，还没有品类名的产品，独自动手的创作者。',
       p: '我们的工作是尽早认出它，然后提供足够长久的资本、资源与耐心，让它有机会燃成无限。',
       facts: [
         { label: '投资阶段', value: '种子轮至 B 轮', note: '最早可在产品诞生之前进入' },
@@ -30,7 +30,7 @@ window.SPARK_I18N = {
     mission: {
       label: '使命愿景',
       missionLabel: '使命',
-      mission: '在火花最微弱的时候，给它时间、资本与信任。',
+      mission: '在星火最微弱的时候，给它时间、资本与信任。',
       visionLabel: '愿景',
       vision: '可能性没有上限的世界：科技拓宽边界，产品更新生活，个体也能创造伟大的事物。',
       principlesTitle: '信条',

@@ -344,7 +344,7 @@
     observeReveals();
     rayStart();
   }
-  var fontReady = doc.fonts && doc.fonts.load ? doc.fonts.load('300 1em "Spark Sans"', '让火花 Aa') : Promise.resolve();
+  var fontReady = doc.fonts && doc.fonts.load ? doc.fonts.load('300 1em "Spark Sans"', '让星火 Aa') : Promise.resolve();
   var cap = new Promise(function (resolve) { setTimeout(resolve, reduce ? 0 : 1600); });
   Promise.race([fontReady, cap]).then(start, start);
 })();
