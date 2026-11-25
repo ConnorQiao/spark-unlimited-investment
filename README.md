@@ -116,4 +116,12 @@ assets/img/             logo 与网站图标
 
 ## 部署
 
-整个目录就是站点本身，上传到任意静态托管即可（对象存储加 CDN、Nginx、Vercel、Netlify、GitHub Pages 等）。
+站点通过 GitHub Pages 发布，地址：<https://connorqiao.github.io/spark-unlimited-investment/>
+
+推送到 `main` 分支后会自动重新发布，通常一两分钟生效。
+
+**搜索引擎收录**：`index.html` 的 `<head>` 里目前有一行 `<meta name="robots" content="noindex, nofollow">`，搜索引擎不会收录这个页面。团队信息换成真实内容后，删掉这一行再推送即可。
+
+**绑定自己的域名**：在仓库的 Settings → Pages → Custom domain 填入域名，再到域名服务商那里按提示添加 DNS 记录。
+
+整个目录就是站点本身，也可以直接上传到其他静态托管（对象存储加 CDN、Nginx、Vercel、Netlify 等）。
