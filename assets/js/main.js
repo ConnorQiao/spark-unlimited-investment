@@ -14,6 +14,7 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var compact = window.matchMedia('(max-width: 900px)');
+  var phone = window.matchMedia('(max-width: 640px)');   // 与样式表里「手机」一段的断点一致
   var DICT = window.SPARK_I18N || {}, CFG = window.SPARK_CONFIG || {};
 
   /* ---------- 语言 ---------- */
@@ -212,13 +213,40 @@
     if (compact.addEventListener) compact.addEventListener('change', onMq); else if (compact.addListener) compact.addListener(onMq);
   }
 
-  /* ---------- 投资方向：展开与收起 ---------- */
+  /* ---------- 投资方向：展开与收起 ----------
+   * 宽屏上第一行默认展开；手机上全部收起，避免一进来就是一大段文字。
+   */
   $$('.alloc__row').forEach(function (row) {
     var head = $('.alloc__head', row);
-    head.addEventListener('click', function () {
-      var open = !row.classList.contains('is-open');
+    var set = function (open) {
       row.classList.toggle('is-open', open);
       head.setAttribute('aria-expanded', String(open));
+    };
+    if (phone.matches) set(false);
+    head.addEventListener('click', function () { set(!row.classList.contains('is-open')); });
+  });
+
+  /* ---------- 信条与团队：手机上点一行展开说明 ----------
+   * 说明文字包在 .fold 里。宽屏上一直显示；手机上默认收起，
+   * 这里给每一行补一个加号按钮（键盘与读屏可用），点整行也能展开。
+   */
+  $$('.creed__row, .roster__row').forEach(function (row, i) {
+    var title = $('h4', row), fold = $('.fold', row);
+    if (!title || !fold) return;
+    title.id = title.id || 'fold-title-' + i;
+    fold.id = fold.id || 'fold-' + i;
+    var btn = doc.createElement('button');
+    btn.type = 'button';
+    btn.className = 'row-toggle';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-labelledby', title.id);
+    btn.setAttribute('aria-controls', fold.id);
+    row.appendChild(btn);
+    row.addEventListener('click', function () {
+      if (!phone.matches) return;
+      var open = !row.classList.contains('is-open');
+      row.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', String(open));
     });
   });
 

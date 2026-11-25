@@ -1,6 +1,7 @@
 /* Spark Unlimited Investment — 文案（中文 / English）
  * 页面上的全部文字都以这里为准：加载时会按当前语言写入带 data-i18n 的元素。
  * 标题里的 <br> 用来控制换行；标题末尾不写句号，页面会接上那枚橙色圆点。
+ * hero.ledeShort 是手机上用的短版首屏说明，改 hero.lede 时记得一起看。
  */
 window.SPARK_I18N = {
   zh: {
@@ -14,6 +15,7 @@ window.SPARK_I18N = {
     hero: {
       title: '让星火<br>成为无限',
       lede: 'Spark Unlimited Investment 是专注早期与成长期的风险投资机构。我们在想法刚刚点燃的时候入场，以长期资本陪伴先进科技、先进消费与独立创作者。',
+      ledeShort: '专注早期与成长期的风险投资机构，在想法刚刚点燃的时候入场。',
       scroll: '向下滚动'
     },
     about: {
@@ -129,6 +131,7 @@ window.SPARK_I18N = {
     hero: {
       title: 'Where sparks<br>become unlimited',
       lede: 'Spark Unlimited Investment is an early and growth-stage venture capital firm. We invest at the moment of ignition, backing advanced technology, advanced consumer and independent creators with patient capital.',
+      ledeShort: 'An early and growth-stage venture capital firm, investing at the moment of ignition.',
       scroll: 'Scroll'
     },
     about: {

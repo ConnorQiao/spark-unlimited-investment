@@ -97,7 +97,8 @@
       <h1 class="hero__title" id="hero-title" data-lines data-dot data-i18n-html="hero.title">Where sparks<br>become unlimited</h1>
 
       <div class="hero__foot">
-        <p class="hero__lede rv" style="--d:.5s" data-i18n="hero.lede">Spark Unlimited Investment is an early and growth-stage venture capital firm. We invest at the moment of ignition, backing advanced technology, advanced consumer and independent creators with patient capital.</p>
+        <p class="hero__lede hide-phone rv" style="--d:.5s" data-i18n="hero.lede">Spark Unlimited Investment is an early and growth-stage venture capital firm. We invest at the moment of ignition, backing advanced technology, advanced consumer and independent creators with patient capital.</p>
+        <p class="hero__lede only-phone rv" style="--d:.5s" data-i18n="hero.ledeShort">An early and growth-stage venture capital firm, investing at the moment of ignition.</p>
         <ul class="hero__alloc rv" style="--d:.6s">
           <li><b>70</b><span data-i18n="focus.items.0.title">Advanced Technology</span></li>
           <li><b>20</b><span data-i18n="focus.items.1.title">Advanced Consumer</span></li>
@@ -116,7 +117,7 @@
         <header class="sec__label rv"><span class="sec__n">01</span><h2 id="about-label" data-i18n="about.label">About</h2></header>
         <div class="sec__body">
           <p class="lead rv" data-i18n="about.statement">We believe every company that changes the world begins as a spark: a technology not yet proven, a product without a category name, a creator working alone.</p>
-          <p class="copy rv" style="--d:.1s" data-i18n="about.p">Our job is to recognize it early, then bring capital, resources and patience for long enough that it can become unlimited.</p>
+          <p class="copy hide-phone rv" style="--d:.1s" data-i18n="about.p">Our job is to recognize it early, then bring capital, resources and patience for long enough that it can become unlimited.</p>
         </div>
       </div>
 
@@ -160,26 +161,27 @@
           </div>
 
           <h3 class="creed__title rv" data-i18n="mission.principlesTitle">Principles</h3>
+          <!-- 手机上每条信条只显示标题，点一下展开说明（.fold 由脚本和样式控制） -->
           <ol class="creed">
             <li class="creed__row rv">
               <span class="creed__n" aria-hidden="true">01</span>
               <h4 data-i18n="mission.principles.0.title">Before consensus</h4>
-              <p data-i18n="mission.principles.0.text">The best opportunities appear before they have a name. When the data is thin, we decide on research and judgment.</p>
+              <div class="fold"><p data-i18n="mission.principles.0.text">The best opportunities appear before they have a name. When the data is thin, we decide on research and judgment.</p></div>
             </li>
             <li class="creed__row rv">
               <span class="creed__n" aria-hidden="true">02</span>
               <h4 data-i18n="mission.principles.1.title">Here for the long run</h4>
-              <p data-i18n="mission.principles.1.text">We think in decades. We take no credit in good times and keep our seat in hard ones.</p>
+              <div class="fold"><p data-i18n="mission.principles.1.text">We think in decades. We take no credit in good times and keep our seat in hard ones.</p></div>
             </li>
             <li class="creed__row rv">
               <span class="creed__n" aria-hidden="true">03</span>
               <h4 data-i18n="mission.principles.2.title">Founders first</h4>
-              <p data-i18n="mission.principles.2.text">A company belongs to the people who build it. We bring resources and perspective, and leave the wheel with the founder.</p>
+              <div class="fold"><p data-i18n="mission.principles.2.text">A company belongs to the people who build it. We bring resources and perspective, and leave the wheel with the founder.</p></div>
             </li>
             <li class="creed__row rv">
               <span class="creed__n" aria-hidden="true">04</span>
               <h4 data-i18n="mission.principles.3.title">Independent judgment</h4>
-              <p data-i18n="mission.principles.3.text">No chasing heat, no faith in labels. Every investment is researched and owned by a partner.</p>
+              <div class="fold"><p data-i18n="mission.principles.3.text">No chasing heat, no faith in labels. Every investment is researched and owned by a partner.</p></div>
             </li>
           </ol>
         </div>
@@ -195,7 +197,7 @@
         <header class="sec__label rv"><span class="sec__n">03</span><h2 id="focus-label" data-i18n="focus.label">Investment Focus</h2></header>
         <div class="sec__body">
           <h3 class="title" data-lines data-dot data-i18n-html="focus.title">Our allocation<br>is our conviction</h3>
-          <p class="copy rv" style="--d:.2s" data-i18n="focus.lede">The portfolio is built 70 / 20 / 10. Its weight sits in frontier technology, with room kept for the products and brands that change how people live, and for individuals who create on their own.</p>
+          <p class="copy hide-phone rv" style="--d:.2s" data-i18n="focus.lede">The portfolio is built 70 / 20 / 10. Its weight sits in frontier technology, with room kept for the products and brands that change how people live, and for individuals who create on their own.</p>
         </div>
       </div>
 
@@ -294,7 +296,7 @@
         <header class="sec__label rv"><span class="sec__n">04</span><h2 id="team-label" data-i18n="team.label">Team</h2></header>
         <div class="sec__body">
           <h3 class="title" data-lines data-dot data-i18n-html="team.title">The people accountable<br>for the call</h3>
-          <p class="copy rv" style="--d:.2s" data-i18n="team.lede">Partners work directly on research, decisions and post-investment support. The person you meet is the person who decides.</p>
+          <p class="copy hide-phone rv" style="--d:.2s" data-i18n="team.lede">Partners work directly on research, decisions and post-investment support. The person you meet is the person who decides.</p>
         </div>
       </div>
 
@@ -304,22 +306,22 @@
         <li class="roster__row rv" data-photo="">
           <h4 class="roster__name" data-i18n="team.members.0.name">Xingye Shen</h4>
           <p class="roster__role" data-i18n="team.members.0.role">Founding Partner</p>
-          <p class="roster__bio" data-i18n="team.members.0.bio">Two decades across technology investing and company building, having led early rounds in several frontier-tech companies. Leads fund strategy and major investment decisions.</p>
+          <div class="fold"><p class="roster__bio" data-i18n="team.members.0.bio">Two decades across technology investing and company building, having led early rounds in several frontier-tech companies. Leads fund strategy and major investment decisions.</p></div>
         </li>
         <li class="roster__row rv" data-photo="">
           <h4 class="roster__name" data-i18n="team.members.1.name">Zhiwei Lu</h4>
           <p class="roster__role" data-i18n="team.members.1.role">Partner, Advanced Technology</p>
-          <p class="roster__bio" data-i18n="team.members.1.bio">PhD in computer architecture; formerly led core R&amp;D on chip and foundation-model teams. Focuses on AI, compute and robotics.</p>
+          <div class="fold"><p class="roster__bio" data-i18n="team.members.1.bio">PhD in computer architecture; formerly led core R&amp;D on chip and foundation-model teams. Focuses on AI, compute and robotics.</p></div>
         </li>
         <li class="roster__row rv" data-photo="">
           <h4 class="roster__name" data-i18n="team.members.2.name">Nanqiao Gu</h4>
           <p class="roster__role" data-i18n="team.members.2.role">Partner, Advanced Consumer</p>
-          <p class="roster__bio" data-i18n="team.members.2.bio">A background in brand operations and consumer investing, having taken several brands from founding to global markets. Focuses on smart hardware, health and next-generation brands.</p>
+          <div class="fold"><p class="roster__bio" data-i18n="team.members.2.bio">A background in brand operations and consumer investing, having taken several brands from founding to global markets. Focuses on smart hardware, health and next-generation brands.</p></div>
         </li>
         <li class="roster__row rv" data-photo="">
           <h4 class="roster__name" data-i18n="team.members.3.name">Yi’an Cheng</h4>
           <p class="roster__role" data-i18n="team.members.3.role">Partner, Creators &amp; Platform</p>
-          <p class="roster__bio" data-i18n="team.members.3.bio">Began as an indie developer whose products have served millions of users. Runs the creator program and post-investment support.</p>
+          <div class="fold"><p class="roster__bio" data-i18n="team.members.3.bio">Began as an indie developer whose products have served millions of users. Runs the creator program and post-investment support.</p></div>
         </li>
       </ul>
     </div>
@@ -338,7 +340,7 @@
 
         <div class="contact">
           <div class="contact__info rv">
-            <p class="copy" data-i18n="contact.lede">A deck, a partnership idea, or a thought that has not taken shape yet: all welcome. Every message is read by the investment team.</p>
+            <p class="copy hide-phone" data-i18n="contact.lede">A deck, a partnership idea, or a thought that has not taken shape yet: all welcome. Every message is read by the investment team.</p>
             <ul class="channels">
               <li><span data-i18n="contact.channels.0.label">Pitches</span><a class="u" data-mail="pitch" href="mailto:bp@sparkunlimited.example">bp@sparkunlimited.example</a></li>
               <li><span data-i18n="contact.channels.1.label">Investor relations</span><a class="u" data-mail="ir" href="mailto:ir@sparkunlimited.example">ir@sparkunlimited.example</a></li>
@@ -425,7 +427,7 @@
             </svg>
             <span class="brand__word">Spark Unlimited <span class="brand__sub">Investment</span></span>
           </a>
-          <nav class="footer__nav" aria-label="Footer">
+          <nav class="footer__nav hide-phone" aria-label="Footer">
             <a class="u" href="#about" data-i18n="nav.about">About</a>
             <a class="u" href="#mission" data-i18n="nav.mission">Mission</a>
             <a class="u" href="#focus" data-i18n="nav.focus">Focus</a>
