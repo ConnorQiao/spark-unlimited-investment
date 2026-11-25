@@ -1,6 +1,5 @@
 /* Spark Unlimited Investment — 页面交互
- * 目录：工具 / 语言 / 标题拆行 / 入场 / 首屏射线 / 导航 / 投资方向 /
- *      团队照片 / 留资表单 / 启动
+ * 目录：工具 / 字体 / 语言 / 标题拆行 / 入场 / 首屏插图 / 导航 / 投资方向 / 留资表单 / 启动
  */
 (function () {
   'use strict';
@@ -11,14 +10,31 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || doc).querySelectorAll(s)); };
   var clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var wait = function (ms) { return new Promise(function (resolve) { setTimeout(resolve, ms); }); };
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var compact = window.matchMedia('(max-width: 900px)');
   var phone = window.matchMedia('(max-width: 640px)');   // 与样式表里「手机」一段的断点一致
   var DICT = window.SPARK_I18N || {}, CFG = window.SPARK_CONFIG || {};
 
-  /* ---------- 语言 ---------- */
-  var STORE = 'spark-lang';
+  /* ---------- 字体 ----------
+   * 中文字体表（#cjk-font）是异步加载的。等它到了，再按需加载某段中文用到的字形。 */
+  var cjkLink = $('#cjk-font');
+  var cjkCss = new Promise(function (resolve) {
+    if (!cjkLink || cjkLink.sheet) return resolve();
+    cjkLink.addEventListener('load', resolve);
+    cjkLink.addEventListener('error', resolve);
+  }).then(function () { if (cjkLink) cjkLink.media = 'all'; });
+
+  function loadCjk(text) {
+    if (!doc.fonts || !doc.fonts.load) return Promise.resolve();
+    return cjkCss.then(function () { return doc.fonts.load('300 1em "Noto Sans SC Variable"', text); });
+  }
+  var plain = function (html) { return String(html || '').replace(/<[^>]*>/g, ''); };
+
+  /* ---------- 语言 ----------
+   * 进来总是英文，只有地址里写了 ?lang=zh 才直接显示中文（由 index.html 头部的脚本决定）。
+   * 页面上切换语言只在本次浏览有效，不写入本地存储。 */
   var lang = root.lang && root.lang.toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en';
   if (!DICT[lang]) lang = 'en';
 
@@ -59,13 +75,16 @@
   function setLang(next) {
     if (next === lang || !DICT[next]) return;
     lang = next;
-    try { localStorage.setItem(STORE, next); } catch (e) {}
     if (reduce) { applyLang(); return; }
     root.classList.add('is-switching');
-    setTimeout(function () {
+    // 切到中文时，先把首屏和导航要用的字形拿到，最多等 0.7 秒，避免淡入后再换字形
+    var glyphs = next === 'zh'
+      ? Promise.race([loadCjk(plain(DICT.zh.hero.title) + plain(DICT.zh.hero.lede) + JSON.stringify(DICT.zh.nav)), wait(700)])
+      : null;
+    Promise.all([wait(230), glyphs]).then(function () {
       applyLang();
       requestAnimationFrame(function () { root.classList.remove('is-switching'); });
-    }, 230);
+    });
   }
 
   /* ---------- 标题拆行 ----------
@@ -83,7 +102,7 @@
 
   /* ---------- 入场 ---------- */
   function observeReveals() {
-    var els = $$('.rv, .rule[data-rule], [data-lines], .alloc__ray');
+    var els = $$('.rv, .rule[data-rule], [data-lines], .alloc__ray, [data-art]');
     var show = function (el) { el.classList.add('is-in'); };
     if (!('IntersectionObserver' in window) || reduce) { els.forEach(show); return; }
     var io = new IntersectionObserver(function (entries) {
@@ -99,63 +118,31 @@
     });
   }
 
-  /* ---------- 首屏射线 ----------
-   * 从标题末尾的圆点出发，穿过指针所在的方向，一直延伸到画面之外。
-   * 没有指针时停在右上方，并有极缓慢的摆动。
+  /* ---------- 首屏插图 ----------
+   * 射线组随指针轻微转动（最多 3 度），只在插图自己的区域里动，不会扫过文字。
+   * 首屏离开视野时暂停插图里的循环动画。
    */
-  var hero = $('.hero'), rayLine = $('.hero__ray line');
-  var ray = { x: 0, y: 0, a: -0.6, target: null, raf: 0, inView: true };
-  var MIN_A = -1.36, MAX_A = 0.1;
-
-  function rayOrigin() {
-    var dot = $('.hero__title .dot');
-    if (!dot || !hero) return false;
-    var hr = hero.getBoundingClientRect(), dr = dot.getBoundingClientRect();
-    ray.x = dr.left + dr.width / 2 - hr.left;
-    ray.y = dr.top + dr.height / 2 - hr.top;
-    ray.w = hr.width; ray.h = hr.height;
-    return true;
-  }
-  function rayRest() {
-    return clamp(Math.atan2(ray.h * (ray.w < 760 ? 0.2 : 0.16) - ray.y, ray.w * 1.02 - ray.x), MIN_A, MAX_A);
-  }
-  function rayDraw() {
-    var len = 6000;
-    rayLine.setAttribute('x1', ray.x.toFixed(1));
-    rayLine.setAttribute('y1', ray.y.toFixed(1));
-    rayLine.setAttribute('x2', (ray.x + Math.cos(ray.a) * len).toFixed(1));
-    rayLine.setAttribute('y2', (ray.y + Math.sin(ray.a) * len).toFixed(1));
-  }
-  function rayTick(now) {
-    ray.raf = requestAnimationFrame(rayTick);
-    if (!rayOrigin()) return;
-    var goal = ray.target !== null ? ray.target : rayRest() + Math.sin(now / 4200) * 0.018;
-    ray.a += (goal - ray.a) * 0.07;
-    rayDraw();
-  }
-  function raySync() {
-    var on = ray.inView && !doc.hidden && !reduce;
-    if (on && !ray.raf) ray.raf = requestAnimationFrame(rayTick);
-    if (!on && ray.raf) { cancelAnimationFrame(ray.raf); ray.raf = 0; }
-  }
-  function rayStart() {
-    if (!hero || !rayLine) return;
-    if (rayOrigin()) { ray.a = rayRest(); rayDraw(); }
-    if (reduce) { window.addEventListener('resize', function () { if (rayOrigin()) { ray.a = rayRest(); rayDraw(); } }); return; }
-    if (finePointer) {
-      hero.addEventListener('pointermove', function (e) {
-        var hr = hero.getBoundingClientRect();
-        var dx = e.clientX - hr.left - ray.x, dy = e.clientY - hr.top - ray.y;
-        if (dx * dx + dy * dy < 1600) return;                       // 太靠近圆点时不改方向
-        ray.target = clamp(Math.atan2(dy, Math.abs(dx)), MIN_A, MAX_A); // 指针在左侧时取镜像，方向保持连续
-      }, { passive: true });
-      hero.addEventListener('pointerleave', function () { ray.target = null; });
-    }
+  var hero = $('.hero');
+  function heroArt() {
+    if (!hero) return;
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) { ray.inView = entries[0].isIntersecting; raySync(); }).observe(hero);
+      new IntersectionObserver(function (entries) { hero.classList.toggle('is-off', !entries[0].isIntersecting); }).observe(hero);
     }
-    doc.addEventListener('visibilitychange', raySync);
-    raySync();
+    var tilt = $('.hero__art [data-tilt]');
+    if (!tilt || reduce || !finePointer) return;
+    var cur = 0, goal = 0, raf = 0;
+    var tick = function () {
+      cur += (goal - cur) * 0.06;
+      tilt.style.setProperty('--tilt', cur.toFixed(3));
+      raf = Math.abs(goal - cur) > 0.002 ? requestAnimationFrame(tick) : 0;
+    };
+    var aim = function (v) { goal = v; if (!raf) raf = requestAnimationFrame(tick); };
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      var nx = (e.clientX - r.left) / r.width - 0.5, ny = (e.clientY - r.top) / r.height - 0.5;
+      aim(clamp((nx + ny) * 4, -3, 3));   // 指针在右下时扇面往下压，在左上时往上抬
+    }, { passive: true });
+    hero.addEventListener('pointerleave', function () { aim(0); });
   }
 
   /* ---------- 导航 ---------- */
@@ -225,52 +212,6 @@
     if (phone.matches) set(false);
     head.addEventListener('click', function () { set(!row.classList.contains('is-open')); });
   });
-
-  /* ---------- 信条与团队：手机上点一行展开说明 ----------
-   * 说明文字包在 .fold 里。宽屏上一直显示；手机上默认收起，
-   * 这里给每一行补一个加号按钮（键盘与读屏可用），点整行也能展开。
-   */
-  $$('.creed__row, .roster__row').forEach(function (row, i) {
-    var title = $('h4', row), fold = $('.fold', row);
-    if (!title || !fold) return;
-    title.id = title.id || 'fold-title-' + i;
-    fold.id = fold.id || 'fold-' + i;
-    var btn = doc.createElement('button');
-    btn.type = 'button';
-    btn.className = 'row-toggle';
-    btn.setAttribute('aria-expanded', 'false');
-    btn.setAttribute('aria-labelledby', title.id);
-    btn.setAttribute('aria-controls', fold.id);
-    row.appendChild(btn);
-    row.addEventListener('click', function () {
-      if (!phone.matches) return;
-      var open = !row.classList.contains('is-open');
-      row.classList.toggle('is-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-    });
-  });
-
-  /* ---------- 团队照片 ----------
-   * 行上写了 data-photo 时，指针悬停会出现跟随的照片。
-   */
-  var portrait = $('.portrait');
-  if (portrait && finePointer && !reduce) {
-    $$('.roster__row').forEach(function (row) {
-      var move = function (e) {
-        portrait.style.setProperty('--x', (e.clientX + 28) + 'px');
-        portrait.style.setProperty('--y', (e.clientY - 150) + 'px');
-      };
-      row.addEventListener('pointerenter', function (e) {
-        var src = row.getAttribute('data-photo');
-        if (!src) return;
-        portrait.style.backgroundImage = 'url("' + src.replace(/"/g, '%22') + '")';
-        move(e);
-        portrait.classList.add('is-on');
-      });
-      row.addEventListener('pointermove', move, { passive: true });
-      row.addEventListener('pointerleave', function () { portrait.classList.remove('is-on'); });
-    });
-  }
 
   /* ---------- 留资表单 ---------- */
   var form = $('#lead-form'), done = $('.done');
@@ -370,9 +311,14 @@
     if (started) return; started = true;
     doc.body.classList.add('is-live');
     observeReveals();
-    rayStart();
+    heroArt();
   }
-  var fontReady = doc.fonts && doc.fonts.load ? doc.fonts.load('300 1em "Spark Sans"', '让星火 Aa') : Promise.resolve();
-  var cap = new Promise(function (resolve) { setTimeout(resolve, reduce ? 0 : 1600); });
-  Promise.race([fontReady, cap]).then(start, start);
+  var titleText = (($('#hero-title') || {}).textContent || '') + 'Aa';
+  var fontReady = doc.fonts && doc.fonts.load
+    ? Promise.all([
+        doc.fonts.load('300 1em "Spark Sans"', 'Aa'),
+        lang === 'zh' ? loadCjk(titleText) : null
+      ])
+    : Promise.resolve();
+  Promise.race([fontReady, wait(reduce ? 0 : 1600)]).then(start, start);
 })();

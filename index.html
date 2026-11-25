@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Spark Unlimited Investment — Where sparks become unlimited</title>
   <meta name="description" content="Spark Unlimited Investment is an early and growth-stage venture capital firm backing advanced technology, advanced consumer and independent creators.">
-  <!-- 团队等信息仍是占位内容，暂不让搜索引擎收录。替换成真实内容后删掉下面这一行。 -->
+  <!-- 联系邮箱、表单等仍是占位内容，暂不让搜索引擎收录。替换成真实内容后删掉下面这一行。 -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#F4F3EF">
   <meta property="og:type" content="website">
@@ -14,25 +14,24 @@
   <meta property="og:description" content="Spark Unlimited Investment is an early and growth-stage venture capital firm backing advanced technology, advanced consumer and independent creators.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
-  <!-- 尽早确定语言，避免首屏文字闪动。顺序：地址里的 ?lang= > 访客上次的选择 > 英文 -->
+  <!-- 尽早确定语言，避免首屏文字闪动。
+       不论访客的系统语言是什么，进来都是英文；只有地址里写了 ?lang=zh 才直接显示中文。
+       页面上切换语言只在本次浏览有效，不会被记住。 -->
   <script>
     (function () {
       var d = document.documentElement;
       d.classList.remove('no-js'); d.classList.add('js');
-      try {
-        var q = new URLSearchParams(location.search).get('lang');
-        var s = localStorage.getItem('spark-lang');
-        var ok = function (v) { return v === 'zh' || v === 'en'; };
-        var l = ok(q) ? q : ok(s) ? s : 'en';   // 默认英文
-        d.lang = l === 'zh' ? 'zh-CN' : 'en';
-      } catch (e) {}
+      try { d.lang = new URLSearchParams(location.search).get('lang') === 'zh' ? 'zh-CN' : 'en'; } catch (e) {}
     })();
   </script>
 
-  <!-- 字体：阿里妈妈方圆体（可变字重，免费可商用）。加载失败时回落到系统黑体。 -->
+  <!-- 字体：英文、数字用阿里妈妈方圆体；中文用思源黑体（Noto Sans SC，按字符分片，只下载页面用到的字）。
+       中文字体表异步加载，不阻塞首屏；脚本会等它就绪再开场，最多等 1.6 秒。 -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preload" as="font" type="font/woff2" crossorigin
         href="https://cdn.jsdelivr.net/npm/@fontpkg/alimama-fang-yuan-ti-vf@1.0.5/AlimamaFangYuanTiVF-Thin.woff2">
+  <link id="cjk-font" rel="stylesheet" media="print" onload="this.media='all'"
+        href="https://cdn.jsdelivr.net/npm/@fontsource-variable/noto-sans-sc@5.2.5/index.css">
 
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -88,24 +87,58 @@
 
 <main id="main">
 
-  <!-- ============ 首屏 ============ -->
+  <!-- ============ 首屏 ============
+       插图（.hero__art）是独立的一块：从左下的圆点发出射线与同心弧，伸出画面之外。
+       它和文字分在两个区域，射线不会穿过任何文字。 -->
   <section class="hero" id="top" aria-labelledby="hero-title">
-    <!-- 射线：从标题末尾的圆点出发，延伸到画面之外，方向跟随指针 -->
-    <svg class="hero__ray" aria-hidden="true"><line pathLength="1" x1="0" y1="0" x2="0" y2="0"/></svg>
-
-    <div class="container hero__inner">
-      <h1 class="hero__title" id="hero-title" data-lines data-dot data-i18n-html="hero.title">Where sparks<br>become unlimited</h1>
-
-      <div class="hero__foot">
-        <p class="hero__lede hide-phone rv" style="--d:.5s" data-i18n="hero.lede">Spark Unlimited Investment is an early and growth-stage venture capital firm. We invest at the moment of ignition, backing advanced technology, advanced consumer and independent creators with patient capital.</p>
-        <p class="hero__lede only-phone rv" style="--d:.5s" data-i18n="hero.ledeShort">An early and growth-stage venture capital firm, investing at the moment of ignition.</p>
-        <ul class="hero__alloc rv" style="--d:.6s">
-          <li><b>70</b><span data-i18n="focus.items.0.title">Advanced Technology</span></li>
-          <li><b>20</b><span data-i18n="focus.items.1.title">Advanced Consumer</span></li>
-          <li><b>10</b><span data-i18n="focus.items.2.title">Independent Creators</span></li>
-        </ul>
-        <a class="hero__scroll rv" style="--d:.7s" href="#about"><span data-i18n="hero.scroll">Scroll</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1 class="hero__title" id="hero-title" data-lines data-dot data-i18n-html="hero.title">Where sparks<br>become unlimited</h1>
+        <p class="hero__lede hide-phone rv" style="--d:.45s" data-i18n="hero.lede">Spark Unlimited Investment is an early and growth-stage venture capital firm. We invest at the moment of ignition, backing advanced technology, advanced consumer and independent creators with patient capital.</p>
+        <p class="hero__lede only-phone rv" style="--d:.45s" data-i18n="hero.ledeShort">An early and growth-stage venture capital firm, investing at the moment of ignition.</p>
+        <div class="hero__cta rv" style="--d:.6s">
+          <a class="btn" href="#contact"><span data-i18n="hero.cta">Get in touch</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="hero__more" href="#focus"><span class="u" data-i18n="hero.more">See our focus</span></a>
+        </div>
       </div>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <svg class="ill" data-art viewBox="0 0 600 700" preserveAspectRatio="xMinYMax slice" style="--ox:90px;--oy:610px;--d:.25s">
+        <!-- 同心弧：一轮一轮长大 -->
+        <path class="s s--rule grow" d="M90 500A110 110 0 0 1 200 610"/>
+        <path class="s s--rule grow" style="--k:1" d="M90 400A210 210 0 0 1 300 610"/>
+        <path class="s s--soft dash grow" style="--k:2" d="M90 300A310 310 0 0 1 400 610"/>
+        <path class="s s--soft dash grow" style="--k:3" d="M90 200A410 410 0 0 1 500 610"/>
+        <path class="s s--soft dash grow" style="--k:4" d="M90 100A510 510 0 0 1 600 610"/>
+        <path class="s s--soft dash grow" style="--k:5" d="M90 0A610 610 0 0 1 700 610"/>
+        <!-- 射线：有的停在某一轮，有的一直伸出画面 -->
+        <g class="tilt" data-tilt>
+          <line class="s s--soft grow" style="--k:1" x1="90" y1="610" x2="229.2" y2="-380.3"/>
+          <line class="s grow" style="--k:2" x1="90" y1="610" x2="180.6" y2="313.5"/>
+          <line class="s s--soft grow" style="--k:3" x1="90" y1="610" x2="528.4" y2="-288.8"/>
+          <line class="s grow" style="--k:4" x1="90" y1="610" x2="325.2" y2="274.1"/>
+          <line class="s s--main grow" x1="90" y1="610" x2="797.1" y2="-97.1"/>
+          <line class="s grow" style="--k:5" x1="90" y1="610" x2="262" y2="489.5"/>
+          <line class="s s--soft grow" style="--k:6" x1="90" y1="610" x2="988.8" y2="171.6"/>
+          <line class="s grow" style="--k:7" x1="90" y1="610" x2="482.1" y2="490.1"/>
+          <line class="s s--soft grow" style="--k:8" x1="90" y1="610" x2="1080.3" y2="470.8"/>
+          <circle class="o travel" cx="90" cy="610" r="4"/>
+          <circle class="k pop" style="--k:3" cx="180.6" cy="313.5" r="5"/>
+          <circle class="h pop" style="--k:4" cx="325.2" cy="274.1" r="6"/>
+          <circle class="k pop" style="--k:1" cx="238.5" cy="461.5" r="4"/>
+          <circle class="k pop" style="--k:5" cx="262" cy="489.5" r="5"/>
+          <circle class="h pop" style="--k:7" cx="482.1" cy="490.1" r="6"/>
+          <circle class="k pop" style="--k:8" cx="397" cy="566.8" r="3.5"/>
+          <circle class="k pop" style="--k:6" cx="548.4" cy="386.4" r="3.5"/>
+          <circle class="k pop" style="--k:3" cx="313.6" cy="151.6" r="3.5"/>
+          <circle class="k pop" style="--k:9" cx="521.3" cy="178.7" r="3"/>
+          <g class="pop" style="--k:6"><circle class="o" cx="379.9" cy="320.1" r="7"/><circle class="s s--spark" cx="379.9" cy="320.1" r="15"/></g>
+        </g>
+        <path class="s s--soft fade" style="--k:6" d="M505 262v16M497 270h16M585 233v14M578 240h14M420 133v14M413 140h14"/>
+        <circle class="s s--spark pulse" cx="90" cy="610" r="14"/>
+        <circle class="o pop" style="--k:-6" cx="90" cy="610" r="14"/>
+      </svg>
     </div>
   </section>
 
@@ -118,24 +151,109 @@
         <div class="sec__body">
           <p class="lead rv" data-i18n="about.statement">We believe every company that changes the world begins as a spark: a technology not yet proven, a product without a category name, a creator working alone.</p>
           <p class="copy hide-phone rv" style="--d:.1s" data-i18n="about.p">Our job is to recognize it early, then bring capital, resources and patience for long enough that it can become unlimited.</p>
+
+          <!-- 从星火到无限：同一个圆点，四个阶段 -->
+          <figure class="ignite">
+            <svg class="ill ill--fadetop" data-art viewBox="0 0 800 160" aria-hidden="true">
+              <path class="s s--rule fade" d="M0 128H800"/>
+              <g style="--ox:34px;--oy:128px">
+                <circle class="s s--spark fade" cx="34" cy="128" r="17"/>
+                <path class="s grow" style="--k:2" d="M34 103v-9M51 111l5.7-5.7M17 111l-5.7-5.7"/>
+                <circle class="o pop" cx="34" cy="128" r="8"/>
+              </g>
+              <g style="--ox:234px;--oy:128px;--d:.15s">
+                <path class="s s--soft grow" d="M234 88A40 40 0 0 1 274 128"/>
+                <line class="s grow" style="--k:1" x1="234" y1="128" x2="299" y2="63"/>
+                <circle class="k pop" style="--k:2" cx="299" cy="63" r="4"/>
+                <circle class="o pop" cx="234" cy="128" r="8"/>
+              </g>
+              <g style="--ox:434px;--oy:128px;--d:.3s">
+                <path class="s s--soft grow" d="M434 88A40 40 0 0 1 474 128"/>
+                <path class="s s--soft grow" style="--k:1" d="M434 48A80 80 0 0 1 514 128"/>
+                <line class="s grow" style="--k:1" x1="434" y1="128" x2="540" y2="71.7"/>
+                <line class="s grow" style="--k:2" x1="434" y1="128" x2="511.1" y2="36.1"/>
+                <line class="s s--soft grow" style="--k:3" x1="434" y1="128" x2="464.9" y2="32.9"/>
+                <circle class="k pop" style="--k:2" cx="485.4" cy="66.7" r="3.5"/>
+                <circle class="h pop" style="--k:3" cx="540" cy="71.7" r="4.5"/>
+                <circle class="o pop" cx="434" cy="128" r="8"/>
+              </g>
+              <g style="--ox:634px;--oy:128px;--d:.45s">
+                <path class="s s--soft grow" d="M634 88A40 40 0 0 1 674 128"/>
+                <path class="s s--soft grow" style="--k:1" d="M634 48A80 80 0 0 1 714 128"/>
+                <path class="s s--soft dash grow" style="--k:2" d="M634 8A120 120 0 0 1 754 128"/>
+                <path class="s s--soft dash grow" style="--k:3" d="M634 -32A160 160 0 0 1 794 128"/>
+                <line class="s grow" style="--k:1" x1="634" y1="128" x2="781.7" y2="102"/>
+                <line class="s grow" style="--k:2" x1="634" y1="128" x2="742.8" y2="77.3"/>
+                <line class="s grow" style="--k:3" x1="634" y1="128" x2="955.7" y2="-142"/>
+                <line class="s s--soft grow" style="--k:4" x1="634" y1="128" x2="892.6" y2="-203"/>
+                <line class="s grow" style="--k:5" x1="634" y1="128" x2="818.1" y2="-249.5"/>
+                <line class="s s--soft grow" style="--k:6" x1="634" y1="128" x2="735.6" y2="-279.5"/>
+                <line class="s grow" style="--k:7" x1="634" y1="128" x2="648.7" y2="-291.7"/>
+                <circle class="h pop" style="--k:3" cx="781.7" cy="102" r="4.5"/>
+                <circle class="k pop" style="--k:4" cx="742.8" cy="77.3" r="3.5"/>
+                <circle class="k pop" style="--k:5" cx="651.5" cy="92" r="3"/>
+                <circle class="o pop" style="--k:6" cx="707.9" cy="33.4" r="5"/>
+                <circle class="o pop" cx="634" cy="128" r="8"/>
+              </g>
+            </svg>
+            <figcaption>
+              <ol class="ignite__steps">
+                <li><span>01</span><b data-i18n="about.stages.0">Spark</b></li>
+                <li><span>02</span><b data-i18n="about.stages.1">Ignite</b></li>
+                <li><span>03</span><b data-i18n="about.stages.2">Grow</b></li>
+                <li><span>04</span><b data-i18n="about.stages.3">Unlimited</b></li>
+              </ol>
+            </figcaption>
+          </figure>
         </div>
       </div>
 
       <dl class="facts">
         <div class="fact rv" style="--d:0s">
-          <dt data-i18n="about.facts.0.label">Stage</dt>
+          <dt>
+            <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
+              <path class="s draw" pathLength="1" d="M4 34H36"/>
+              <path class="s draw" style="--k:1" pathLength="1" d="M12 34V27"/>
+              <path class="s draw" style="--k:2" pathLength="1" d="M21 34V19"/>
+              <path class="s draw" style="--k:3" pathLength="1" d="M30 34V9"/>
+              <circle class="o pop" cx="12" cy="21.5" r="2.8"/>
+            </svg>
+            <span data-i18n="about.facts.0.label">Stage</span>
+          </dt>
           <dd><strong data-i18n="about.facts.0.value">Seed to Series B</strong><span data-i18n="about.facts.0.note">As early as pre-product</span></dd>
         </div>
         <div class="fact rv" style="--d:.07s">
-          <dt data-i18n="about.facts.1.label">Role</dt>
+          <dt>
+            <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
+              <path class="s draw" pathLength="1" d="M8 14H33M28 9l5 5-5 5"/>
+              <path class="s s--soft dash fade" d="M8 26H27"/>
+              <circle class="o pop" cx="6" cy="14" r="2.8"/>
+            </svg>
+            <span data-i18n="about.facts.1.label">Role</span>
+          </dt>
           <dd><strong data-i18n="about.facts.1.value">Lead and co-lead</strong><span data-i18n="about.facts.1.note">Concentrated positions, with reserves to follow on</span></dd>
         </div>
         <div class="fact rv" style="--d:.14s">
-          <dt data-i18n="about.facts.2.label">Horizon</dt>
+          <dt>
+            <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
+              <path class="s draw" pathLength="1" d="M7 20H34M30 16l4 4-4 4"/>
+              <path class="s s--soft draw" style="--k:2" pathLength="1" d="M13 17v6M19 17v6M25 17v6"/>
+              <circle class="o pop" cx="6" cy="20" r="2.8"/>
+            </svg>
+            <span data-i18n="about.facts.2.label">Horizon</span>
+          </dt>
           <dd><strong data-i18n="about.facts.2.value">Measured in decades</strong><span data-i18n="about.facts.2.note">Unmoved by short-term noise</span></dd>
         </div>
         <div class="fact rv" style="--d:.21s">
-          <dt data-i18n="about.facts.3.label">Decisions</dt>
+          <dt>
+            <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
+              <circle class="s draw" pathLength="1" cx="10" cy="20" r="6"/>
+              <circle class="s draw" style="--k:1" pathLength="1" cx="30" cy="20" r="6"/>
+              <path class="s draw" style="--k:2" pathLength="1" d="M16 20H24"/>
+              <circle class="o pop" cx="20" cy="20" r="2.4"/>
+            </svg>
+            <span data-i18n="about.facts.3.label">Decisions</span>
+          </dt>
           <dd><strong data-i18n="about.facts.3.value">Made by partners</strong><span data-i18n="about.facts.3.note">No layers between you and the answer</span></dd>
         </div>
       </dl>
@@ -151,37 +269,76 @@
         <div class="sec__body">
           <div class="duo">
             <div class="duo__item rv">
+              <!-- 使命：托住最微弱的星火 -->
+              <svg class="ill duo__art" data-art viewBox="0 0 240 120" aria-hidden="true" style="--ox:120px;--oy:72px">
+                <path class="s s--soft fade" d="M36 58Q120 146 204 58"/>
+                <path class="s fade" style="--k:1" d="M72 62Q120 112 168 62"/>
+                <path class="s grow" style="--k:3" d="M120 56V40M128 58.1L136 44.3M112 58.1L104 44.3"/>
+                <circle class="o pop" cx="120" cy="72" r="6"/>
+              </svg>
               <h3 class="duo__label" data-i18n="mission.missionLabel">Mission</h3>
               <p class="duo__text" data-i18n="mission.mission">To give the faintest sparks what they need most: time, capital and conviction.</p>
             </div>
             <div class="duo__item rv" style="--d:.1s">
+              <!-- 愿景：射线穿过天花板，继续向上 -->
+              <svg class="ill ill--fadetop duo__art" data-art viewBox="0 0 240 120" aria-hidden="true" style="--ox:56px;--oy:104px">
+                <path class="s s--rule fade" d="M0 104H240"/>
+                <path class="s s--soft dash fade" d="M0 34H145M165 34H240"/>
+                <line class="s grow" style="--k:1" x1="56" y1="104" x2="203.1" y2="0"/>
+                <path class="s s--soft fade" style="--k:4" d="M148 27L143 22M163 38L169 41M148 41L143 45"/>
+                <circle class="k pop" style="--k:5" cx="183.3" cy="14" r="3"/>
+                <circle class="o pop" cx="56" cy="104" r="6"/>
+              </svg>
               <h3 class="duo__label" data-i18n="mission.visionLabel">Vision</h3>
               <p class="duo__text" data-i18n="mission.vision">A world with no ceiling on what is possible, where technology widens the frontier, products renew everyday life, and one person is enough to build something great.</p>
             </div>
           </div>
 
           <h3 class="creed__title rv" data-i18n="mission.principlesTitle">Principles</h3>
-          <!-- 手机上每条信条只显示标题，点一下展开说明（.fold 由脚本和样式控制） -->
           <ol class="creed">
-            <li class="creed__row rv">
-              <span class="creed__n" aria-hidden="true">01</span>
-              <h4 data-i18n="mission.principles.0.title">Before consensus</h4>
-              <div class="fold"><p data-i18n="mission.principles.0.text">The best opportunities appear before they have a name. When the data is thin, we decide on research and judgment.</p></div>
+            <li class="creed__item rv">
+              <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
+                <g class="fade"><circle class="g" cx="7" cy="14" r="1.9"/><circle class="g" cx="7" cy="26" r="1.9"/><circle class="g" cx="12.5" cy="20" r="1.9"/><circle class="g" cx="13" cy="11" r="1.9"/><circle class="g" cx="13" cy="29" r="1.9"/></g>
+                <path class="s draw" style="--k:1" pathLength="1" d="M18 20H28"/>
+                <circle class="o pop" cx="32.5" cy="20" r="3.2"/>
+              </svg>
+              <div>
+                <h4><span class="creed__n" aria-hidden="true">01</span><span data-i18n="mission.principles.0.title">Before consensus</span></h4>
+                <p data-i18n="mission.principles.0.text">The best opportunities appear before they have a name. When the data is thin, we decide on research and judgment.</p>
+              </div>
             </li>
-            <li class="creed__row rv">
-              <span class="creed__n" aria-hidden="true">02</span>
-              <h4 data-i18n="mission.principles.1.title">Here for the long run</h4>
-              <div class="fold"><p data-i18n="mission.principles.1.text">We think in decades. We take no credit in good times and keep our seat in hard ones.</p></div>
+            <li class="creed__item rv" style="--d:.07s">
+              <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
+                <path class="s s--soft draw" pathLength="1" d="M4 20C7 11 11 11 14 20S21 29 24 20S31 11 34 20"/>
+                <path class="s draw" style="--k:2" pathLength="1" d="M4 20H32"/>
+                <circle class="o pop" cx="35.5" cy="20" r="2.8"/>
+              </svg>
+              <div>
+                <h4><span class="creed__n" aria-hidden="true">02</span><span data-i18n="mission.principles.1.title">Here for the long run</span></h4>
+                <p data-i18n="mission.principles.1.text">We think in decades. We take no credit in good times and keep our seat in hard ones.</p>
+              </div>
             </li>
-            <li class="creed__row rv">
-              <span class="creed__n" aria-hidden="true">03</span>
-              <h4 data-i18n="mission.principles.2.title">Founders first</h4>
-              <div class="fold"><p data-i18n="mission.principles.2.text">A company belongs to the people who build it. We bring resources and perspective, and leave the wheel with the founder.</p></div>
+            <li class="creed__item rv" style="--d:.14s">
+              <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
+                <circle class="s draw" pathLength="1" cx="20" cy="20" r="13"/>
+                <path class="s draw" style="--k:2" pathLength="1" d="M20 17V7M17.4 21.5L8.7 26.5M22.6 21.5L31.3 26.5"/>
+                <circle class="o pop" cx="20" cy="20" r="3"/>
+              </svg>
+              <div>
+                <h4><span class="creed__n" aria-hidden="true">03</span><span data-i18n="mission.principles.2.title">Founders first</span></h4>
+                <p data-i18n="mission.principles.2.text">A company belongs to the people who build it. We bring resources and perspective, and leave the wheel with the founder.</p>
+              </div>
             </li>
-            <li class="creed__row rv">
-              <span class="creed__n" aria-hidden="true">04</span>
-              <h4 data-i18n="mission.principles.3.title">Independent judgment</h4>
-              <div class="fold"><p data-i18n="mission.principles.3.text">No chasing heat, no faith in labels. Every investment is researched and owned by a partner.</p></div>
+            <li class="creed__item rv" style="--d:.21s">
+              <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
+                <path class="s s--soft draw" pathLength="1" d="M4 25H26M4 30H26M4 35H26"/>
+                <path class="s draw" style="--k:2" pathLength="1" d="M4 20H14L28 8"/>
+                <circle class="o pop" cx="31" cy="5.5" r="2.8"/>
+              </svg>
+              <div>
+                <h4><span class="creed__n" aria-hidden="true">04</span><span data-i18n="mission.principles.3.title">Independent judgment</span></h4>
+                <p data-i18n="mission.principles.3.text">No chasing heat, no faith in labels. Every investment is researched and owned by a partner.</p>
+              </div>
             </li>
           </ol>
         </div>
@@ -212,6 +369,16 @@
               <span class="alloc__desc" data-i18n="focus.items.0.desc">Frontier technology that pushes the boundary of the possible. The core of the portfolio.</span>
               <span class="alloc__ray" data-ray aria-hidden="true"><i></i><b></b></span>
             </span>
+            <!-- 芯片 -->
+            <span class="alloc__art" aria-hidden="true">
+              <svg class="ill" data-art viewBox="0 0 120 120">
+                <path class="s s--soft fade" d="M42 30V18M54 30V18M66 30V18M78 30V18M42 90V102M54 90V102M66 90V102M78 90V102M30 42H18M30 54H18M30 66H18M30 78H18M90 42H102M90 54H102M90 66H102M90 78H102"/>
+                <rect class="s f2 fade" style="--k:1" x="30" y="30" width="60" height="60" rx="6"/>
+                <rect class="s f1 fade" style="--k:2" x="44" y="44" width="32" height="32" rx="3"/>
+                <path class="s fade" style="--k:3" d="M51 70V58H61V51H65.5"/>
+                <circle class="o pop" style="--k:3" cx="69.5" cy="51" r="3.5"/>
+              </svg>
+            </span>
             <span class="alloc__toggle" aria-hidden="true"></span>
           </button>
           <div class="alloc__body" id="alloc-body-0" role="region" aria-labelledby="alloc-head-0">
@@ -239,6 +406,16 @@
               <span class="alloc__desc" data-i18n="focus.items.1.desc">Products and brands that change the way people live.</span>
               <span class="alloc__ray" data-ray aria-hidden="true"><i></i><b></b></span>
             </span>
+            <!-- 产品 -->
+            <span class="alloc__art" aria-hidden="true">
+              <svg class="ill" data-art viewBox="0 0 120 120" style="--ox:60px;--oy:42px">
+                <path class="s f2 fade" d="M28 42L60 58V94L28 78Z"/>
+                <path class="s f3 fade" style="--k:1" d="M92 42L60 58V94L92 78Z"/>
+                <path class="s f1 fade" style="--k:2" d="M60 26L92 42L60 58L28 42Z"/>
+                <path class="s s--soft grow" style="--k:4" d="M60 19V10M75 23L80 17M45 23L40 17"/>
+                <circle class="o pop" style="--k:3" cx="60" cy="42" r="4"/>
+              </svg>
+            </span>
             <span class="alloc__toggle" aria-hidden="true"></span>
           </button>
           <div class="alloc__body" id="alloc-body-1" role="region" aria-labelledby="alloc-head-1">
@@ -265,6 +442,18 @@
               <span class="alloc__title" data-i18n="focus.items.2.title">Independent Creators</span>
               <span class="alloc__desc" data-i18n="focus.items.2.desc">People who create on their own strength.</span>
               <span class="alloc__ray" data-ray aria-hidden="true"><i></i><b></b></span>
+            </span>
+            <!-- 笔尖 -->
+            <span class="alloc__art" aria-hidden="true">
+              <svg class="ill" data-art viewBox="0 0 120 120">
+                <path class="s s--soft fade" d="M44.8 75.2C38 84 28 78 22 86S12 98 6 96"/>
+                <g transform="translate(66 54) rotate(45)">
+                  <path class="s f2 fade" style="--k:1" d="M0 30C-6 18-14 8-14-4L-12-24H12L14-4C14 8 6 18 0 30Z"/>
+                  <path class="s fade" style="--k:2" d="M0 30V0M-12.6-17H12.6"/>
+                  <circle class="s f1 fade" style="--k:2" cx="0" cy="-4" r="3.2"/>
+                </g>
+                <circle class="o pop" style="--k:3" cx="44.8" cy="75.2" r="3.4"/>
+              </svg>
             </span>
             <span class="alloc__toggle" aria-hidden="true"></span>
           </button>
@@ -300,28 +489,23 @@
         </div>
       </div>
 
-      <!-- 人物照片：给某一行加上 data-photo="assets/img/team/xxx.jpg"，
-           指针悬停在这一行时，照片会跟随指针出现。 -->
-      <ul class="roster">
-        <li class="roster__row rv" data-photo="">
-          <h4 class="roster__name" data-i18n="team.members.0.name">Xingye Shen</h4>
-          <p class="roster__role" data-i18n="team.members.0.role">Founding Partner</p>
-          <div class="fold"><p class="roster__bio" data-i18n="team.members.0.bio">Two decades across technology investing and company building, having led early rounds in several frontier-tech companies. Leads fund strategy and major investment decisions.</p></div>
+      <!-- 照片在 assets/img/team/，正方形，头顶留一点空。名字与职务在 i18n.js 的 team.members。 -->
+      <ul class="people">
+        <li class="person rv">
+          <div class="person__photo">
+            <img src="assets/img/team/yangke-sun.jpg" alt="" width="560" height="560" loading="lazy" decoding="async">
+            <span class="person__orbit" aria-hidden="true"></span>
+          </div>
+          <h4 class="person__name" data-i18n="team.members.0.name">Yangke Sun</h4>
+          <p class="person__role" data-i18n="team.members.0.role">Partner</p>
         </li>
-        <li class="roster__row rv" data-photo="">
-          <h4 class="roster__name" data-i18n="team.members.1.name">Zhiwei Lu</h4>
-          <p class="roster__role" data-i18n="team.members.1.role">Partner, Advanced Technology</p>
-          <div class="fold"><p class="roster__bio" data-i18n="team.members.1.bio">PhD in computer architecture; formerly led core R&amp;D on chip and foundation-model teams. Focuses on AI, compute and robotics.</p></div>
-        </li>
-        <li class="roster__row rv" data-photo="">
-          <h4 class="roster__name" data-i18n="team.members.2.name">Nanqiao Gu</h4>
-          <p class="roster__role" data-i18n="team.members.2.role">Partner, Advanced Consumer</p>
-          <div class="fold"><p class="roster__bio" data-i18n="team.members.2.bio">A background in brand operations and consumer investing, having taken several brands from founding to global markets. Focuses on smart hardware, health and next-generation brands.</p></div>
-        </li>
-        <li class="roster__row rv" data-photo="">
-          <h4 class="roster__name" data-i18n="team.members.3.name">Yi’an Cheng</h4>
-          <p class="roster__role" data-i18n="team.members.3.role">Partner, Creators &amp; Platform</p>
-          <div class="fold"><p class="roster__bio" data-i18n="team.members.3.bio">Began as an indie developer whose products have served millions of users. Runs the creator program and post-investment support.</p></div>
+        <li class="person rv" style="--d:.1s">
+          <div class="person__photo">
+            <img src="assets/img/team/sophia-su.jpg" alt="" width="560" height="560" loading="lazy" decoding="async">
+            <span class="person__orbit" aria-hidden="true"></span>
+          </div>
+          <h4 class="person__name" data-i18n="team.members.1.name">Sophia Su</h4>
+          <p class="person__role" data-i18n="team.members.1.role">Partner</p>
         </li>
       </ul>
     </div>
@@ -333,8 +517,16 @@
       <div class="container">
         <div class="sec__grid">
           <header class="sec__label rv"><span class="sec__n">05</span><h2 id="contact-label" data-i18n="contact.label">Contact</h2></header>
-          <div class="sec__body">
+          <div class="sec__body contact__head">
             <h3 class="title" data-lines data-dot data-i18n-html="contact.title">Tell us what<br>you are igniting</h3>
+            <!-- 纸飞机：从圆点出发，沿着虚线飞出去 -->
+            <svg class="ill contact__art" data-art viewBox="0 0 220 160" aria-hidden="true">
+              <path class="s s--soft dots fade" d="M31 132C58 146 74 102 98 108S126 96 136 84"/>
+              <path class="s f1 fade" style="--k:2" d="M204 22L112 58L142 72Z"/>
+              <path class="s f2 fade" style="--k:3" d="M204 22L142 72L156 110Z"/>
+              <path class="s s--soft fade" style="--k:4" d="M142 72L146 91L156 110"/>
+              <circle class="o pop" cx="24" cy="136" r="7"/>
+            </svg>
           </div>
         </div>
 
@@ -444,9 +636,6 @@
     </footer>
   </div>
 </main>
-
-<!-- 团队照片浮层（有照片时才会出现） -->
-<div class="portrait" aria-hidden="true"></div>
 
 <script src="assets/js/config.js" defer></script>
 <script src="assets/js/i18n.js" defer></script>

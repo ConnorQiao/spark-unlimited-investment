@@ -2,6 +2,7 @@
  * 页面上的全部文字都以这里为准：加载时会按当前语言写入带 data-i18n 的元素。
  * 标题里的 <br> 用来控制换行；标题末尾不写句号，页面会接上那枚橙色圆点。
  * hero.ledeShort 是手机上用的短版首屏说明，改 hero.lede 时记得一起看。
+ * 页面总是以英文打开；中文只在访客点「中」或地址带 ?lang=zh 时出现。
  */
 window.SPARK_I18N = {
   zh: {
@@ -16,12 +17,14 @@ window.SPARK_I18N = {
       title: '让星火<br>成为无限',
       lede: 'Spark Unlimited Investment 是专注早期与成长期的风险投资机构。我们在想法刚刚点燃的时候入场，以长期资本陪伴先进科技、先进消费与独立创作者。',
       ledeShort: '专注早期与成长期的风险投资机构，在想法刚刚点燃的时候入场。',
-      scroll: '向下滚动'
+      cta: '联系我们',
+      more: '了解投资方向'
     },
     about: {
       label: '介绍',
       statement: '我们相信，改变世界的公司最初都只是星火：尚未被验证的技术，还没有品类名的产品，独自动手的创作者。',
       p: '我们的工作是尽早认出它，然后提供足够长久的资本、资源与耐心，让它有机会燃成无限。',
+      stages: ['星火', '点燃', '生长', '无限'],
       facts: [
         { label: '投资阶段', value: '种子轮至 B 轮', note: '最早可在产品诞生之前进入' },
         { label: '投资角色', value: '领投与联合领投', note: '重仓看准的公司，并持续加注' },
@@ -75,10 +78,8 @@ window.SPARK_I18N = {
       title: '为判断负责的人',
       lede: '合伙人直接参与项目的研究、决策与投后。你见到的人，就是做决定的人。',
       members: [
-        { name: '沈星野', role: '创始合伙人', bio: '二十年科技投资与创业经历，曾主导多家前沿科技公司的早期融资。负责基金战略与重大投资决策。' },
-        { name: '陆知微', role: '合伙人，先进科技', bio: '计算机体系结构博士，曾在芯片与大模型团队负责核心研发。关注人工智能、算力与机器人。' },
-        { name: '顾南乔', role: '合伙人，先进消费', bio: '品牌操盘与消费投资背景，亲历多个品牌从创立到出海的全过程。关注智能硬件、健康与新一代品牌。' },
-        { name: '程以安', role: '合伙人，创作者与投后', bio: '独立开发者出身，作品服务过数百万用户。负责创作者计划与被投企业的投后支持。' }
+        { name: 'Yangke Sun', role: '合伙人' },
+        { name: '苏瑜（Sophia）', role: '合伙人' }
       ]
     },
     contact: {
@@ -132,12 +133,14 @@ window.SPARK_I18N = {
       title: 'Where sparks<br>become unlimited',
       lede: 'Spark Unlimited Investment is an early and growth-stage venture capital firm. We invest at the moment of ignition, backing advanced technology, advanced consumer and independent creators with patient capital.',
       ledeShort: 'An early and growth-stage venture capital firm, investing at the moment of ignition.',
-      scroll: 'Scroll'
+      cta: 'Get in touch',
+      more: 'See our focus'
     },
     about: {
       label: 'About',
       statement: 'We believe every company that changes the world begins as a spark: a technology not yet proven, a product without a category name, a creator working alone.',
       p: 'Our job is to recognize it early, then bring capital, resources and patience for long enough that it can become unlimited.',
+      stages: ['Spark', 'Ignite', 'Grow', 'Unlimited'],
       facts: [
         { label: 'Stage', value: 'Seed to Series B', note: 'As early as pre-product' },
         { label: 'Role', value: 'Lead and co-lead', note: 'Concentrated positions, with reserves to follow on' },
@@ -191,10 +194,8 @@ window.SPARK_I18N = {
       title: 'The people accountable<br>for the call',
       lede: 'Partners work directly on research, decisions and post-investment support. The person you meet is the person who decides.',
       members: [
-        { name: 'Xingye Shen', role: 'Founding Partner', bio: 'Two decades across technology investing and company building, having led early rounds in several frontier-tech companies. Leads fund strategy and major investment decisions.' },
-        { name: 'Zhiwei Lu', role: 'Partner, Advanced Technology', bio: 'PhD in computer architecture; formerly led core R&D on chip and foundation-model teams. Focuses on AI, compute and robotics.' },
-        { name: 'Nanqiao Gu', role: 'Partner, Advanced Consumer', bio: 'A background in brand operations and consumer investing, having taken several brands from founding to global markets. Focuses on smart hardware, health and next-generation brands.' },
-        { name: 'Yi’an Cheng', role: 'Partner, Creators & Platform', bio: 'Began as an indie developer whose products have served millions of users. Runs the creator program and post-investment support.' }
+        { name: 'Yangke Sun', role: 'Partner' },
+        { name: 'Sophia Su', role: 'Partner' }
       ]
     },
     contact: {
