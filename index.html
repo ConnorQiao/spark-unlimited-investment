@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Spark Unlimited Investment — Where sparks become unlimited</title>
+  <meta name="description" content="Spark Unlimited Investment is an early and growth-stage venture capital firm backing advanced technology, advanced consumer and independent creators.">
+  <meta name="theme-color" content="#F4F3EF">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Spark Unlimited Investment">
+  <meta property="og:title" content="Spark Unlimited Investment — Where sparks become unlimited">
+  <meta property="og:description" content="Spark Unlimited Investment is an early and growth-stage venture capital firm backing advanced technology, advanced consumer and independent creators.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- 尽早确定语言，避免首屏文字闪动。顺序：地址里的 ?lang= > 访客上次的选择 > 英文 -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.remove('no-js'); d.classList.add('js');
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        var s = localStorage.getItem('spark-lang');
+        var ok = function (v) { return v === 'zh' || v === 'en'; };
+        var l = ok(q) ? q : ok(s) ? s : 'en';   // 默认英文
+        d.lang = l === 'zh' ? 'zh-CN' : 'en';
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- 字体：阿里妈妈方圆体（可变字重，免费可商用）。加载失败时回落到系统黑体。 -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://cdn.jsdelivr.net/npm/@fontpkg/alimama-fang-yuan-ti-vf@1.0.5/AlimamaFangYuanTiVF-Thin.woff2">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+</svg>
+
+<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+<!-- ============ 导航 ============ -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Spark Unlimited Investment">
+    <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+      <line x1="8" y1="24" x2="30" y2="2"/>
+      <circle cx="8" cy="24" r="4.4"/>
+    </svg>
+    <span class="brand__word">Spark Unlimited <span class="brand__sub">Investment</span></span>
+  </a>
+
+  <nav class="nav__links" aria-label="Primary" data-i18n-attr="aria-label:a11y.nav">
+    <a href="#about" data-nav="about" data-i18n="nav.about">About</a>
+    <a href="#mission" data-nav="mission" data-i18n="nav.mission">Mission</a>
+    <a href="#focus" data-nav="focus" data-i18n="nav.focus">Focus</a>
+    <a href="#team" data-nav="team" data-i18n="nav.team">Team</a>
+    <a href="#contact" data-nav="contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+
+  <div class="nav__tools">
+    <div class="lang" role="group" aria-label="Switch language" data-i18n-attr="aria-label:a11y.lang">
+      <button type="button" data-lang="zh" aria-pressed="false" lang="zh-CN">中</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+    </div>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="menu-btn__open" data-i18n="a11y.menu">Menu</span>
+      <span class="menu-btn__close" data-i18n="a11y.close">Close</span>
+    </button>
+  </div>
+</header>
+
+<!-- 移动端菜单 -->
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__links" aria-label="Primary" data-i18n-attr="aria-label:a11y.nav">
+    <a href="#about" style="--i:0"><small>01</small><span data-i18n="nav.about">About</span></a>
+    <a href="#mission" style="--i:1"><small>02</small><span data-i18n="nav.mission">Mission</span></a>
+    <a href="#focus" style="--i:2"><small>03</small><span data-i18n="nav.focus">Focus</span></a>
+    <a href="#team" style="--i:3"><small>04</small><span data-i18n="nav.team">Team</span></a>
+    <a href="#contact" style="--i:4"><small>05</small><span data-i18n="nav.contact">Contact</span></a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <!-- 射线：从标题末尾的圆点出发，延伸到画面之外，方向跟随指针 -->
+    <svg class="hero__ray" aria-hidden="true"><line pathLength="1" x1="0" y1="0" x2="0" y2="0"/></svg>
+
+    <div class="container hero__inner">
+      <h1 class="hero__title" id="hero-title" data-lines data-dot data-i18n-html="hero.title">Where sparks<br>become unlimited</h1>
+
+      <div class="hero__foot">
+        <p class="hero__lede rv" style="--d:.5s" data-i18n="hero.lede">Spark Unlimited Investment is an early and growth-stage venture capital firm. We invest at the moment of ignition, backing advanced technology, advanced consumer and independent creators with patient capital.</p>
+        <ul class="hero__alloc rv" style="--d:.6s">
+          <li><b>70</b><span data-i18n="focus.items.0.title">Advanced Technology</span></li>
+          <li><b>20</b><span data-i18n="focus.items.1.title">Advanced Consumer</span></li>
+          <li><b>10</b><span data-i18n="focus.items.2.title">Independent Creators</span></li>
+        </ul>
+        <a class="hero__scroll rv" style="--d:.7s" href="#about"><span data-i18n="hero.scroll">Scroll</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 介绍 ============ -->
+  <section class="sec" id="about" aria-labelledby="about-label">
+    <div class="container">
+      <div class="rule" data-rule></div>
+      <div class="sec__grid">
+        <header class="sec__label rv"><span class="sec__n">01</span><h2 id="about-label" data-i18n="about.label">About</h2></header>
+        <div class="sec__body">
+          <p class="lead rv" data-i18n="about.statement">We believe every company that changes the world begins as a spark: a technology not yet proven, a product without a category name, a creator working alone.</p>
+          <p class="copy rv" style="--d:.1s" data-i18n="about.p">Our job is to recognize it early, then bring capital, resources and patience for long enough that it can become unlimited.</p>
+        </div>
+      </div>
+
+      <dl class="facts">
+        <div class="fact rv" style="--d:0s">
+          <dt data-i18n="about.facts.0.label">Stage</dt>
+          <dd><strong data-i18n="about.facts.0.value">Seed to Series B</strong><span data-i18n="about.facts.0.note">As early as pre-product</span></dd>
+        </div>
+        <div class="fact rv" style="--d:.07s">
+          <dt data-i18n="about.facts.1.label">Role</dt>
+          <dd><strong data-i18n="about.facts.1.value">Lead and co-lead</strong><span data-i18n="about.facts.1.note">Concentrated positions, with reserves to follow on</span></dd>
+        </div>
+        <div class="fact rv" style="--d:.14s">
+          <dt data-i18n="about.facts.2.label">Horizon</dt>
+          <dd><strong data-i18n="about.facts.2.value">Measured in decades</strong><span data-i18n="about.facts.2.note">Unmoved by short-term noise</span></dd>
+        </div>
+        <div class="fact rv" style="--d:.21s">
+          <dt data-i18n="about.facts.3.label">Decisions</dt>
+          <dd><strong data-i18n="about.facts.3.value">Made by partners</strong><span data-i18n="about.facts.3.note">No layers between you and the answer</span></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ 02 使命愿景 ============ -->
+  <section class="sec" id="mission" aria-labelledby="mission-label">
+    <div class="container">
+      <div class="rule" data-rule></div>
+      <div class="sec__grid">
+        <header class="sec__label rv"><span class="sec__n">02</span><h2 id="mission-label" data-i18n="mission.label">Mission &amp; Vision</h2></header>
+        <div class="sec__body">
+          <div class="duo">
+            <div class="duo__item rv">
+              <h3 class="duo__label" data-i18n="mission.missionLabel">Mission</h3>
+              <p class="duo__text" data-i18n="mission.mission">To give the faintest sparks what they need most: time, capital and conviction.</p>
+            </div>
+            <div class="duo__item rv" style="--d:.1s">
+              <h3 class="duo__label" data-i18n="mission.visionLabel">Vision</h3>
+              <p class="duo__text" data-i18n="mission.vision">A world with no ceiling on what is possible, where technology widens the frontier, products renew everyday life, and one person is enough to build something great.</p>
+            </div>
+          </div>
+
+          <h3 class="creed__title rv" data-i18n="mission.principlesTitle">Principles</h3>
+          <ol class="creed">
+            <li class="creed__row rv">
+              <span class="creed__n" aria-hidden="true">01</span>
+              <h4 data-i18n="mission.principles.0.title">Before consensus</h4>
+              <p data-i18n="mission.principles.0.text">The best opportunities appear before they have a name. When the data is thin, we decide on research and judgment.</p>
+            </li>
+            <li class="creed__row rv">
+              <span class="creed__n" aria-hidden="true">02</span>
+              <h4 data-i18n="mission.principles.1.title">Here for the long run</h4>
+              <p data-i18n="mission.principles.1.text">We think in decades. We take no credit in good times and keep our seat in hard ones.</p>
+            </li>
+            <li class="creed__row rv">
+              <span class="creed__n" aria-hidden="true">03</span>
+              <h4 data-i18n="mission.principles.2.title">Founders first</h4>
+              <p data-i18n="mission.principles.2.text">A company belongs to the people who build it. We bring resources and perspective, and leave the wheel with the founder.</p>
+            </li>
+            <li class="creed__row rv">
+              <span class="creed__n" aria-hidden="true">04</span>
+              <h4 data-i18n="mission.principles.3.title">Independent judgment</h4>
+              <p data-i18n="mission.principles.3.text">No chasing heat, no faith in labels. Every investment is researched and owned by a partner.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 投资方向 ============ -->
+  <section class="sec" id="focus" aria-labelledby="focus-label">
+    <div class="container">
+      <div class="rule" data-rule></div>
+      <div class="sec__grid">
+        <header class="sec__label rv"><span class="sec__n">03</span><h2 id="focus-label" data-i18n="focus.label">Investment Focus</h2></header>
+        <div class="sec__body">
+          <h3 class="title" data-lines data-dot data-i18n-html="focus.title">Our allocation<br>is our conviction</h3>
+          <p class="copy rv" style="--d:.2s" data-i18n="focus.lede">The portfolio is built 70 / 20 / 10. Its weight sits in frontier technology, with room kept for the products and brands that change how people live, and for individuals who create on their own.</p>
+        </div>
+      </div>
+
+      <!-- 每一行的射线长度就是它在组合里的占比 -->
+      <div class="alloc">
+        <article class="alloc__row is-open" style="--pct:70">
+          <div class="rule" data-rule></div>
+          <button class="alloc__head" type="button" id="alloc-head-0" aria-expanded="true" aria-controls="alloc-body-0">
+            <span class="alloc__num"><span>70</span><sup>%</sup></span>
+            <span class="alloc__main">
+              <span class="alloc__title" data-i18n="focus.items.0.title">Advanced Technology</span>
+              <span class="alloc__desc" data-i18n="focus.items.0.desc">Frontier technology that pushes the boundary of the possible. The core of the portfolio.</span>
+              <span class="alloc__ray" data-ray aria-hidden="true"><i></i><b></b></span>
+            </span>
+            <span class="alloc__toggle" aria-hidden="true"></span>
+          </button>
+          <div class="alloc__body" id="alloc-body-0" role="region" aria-labelledby="alloc-head-0">
+            <div class="alloc__body-in">
+              <div class="alloc__col">
+                <h4 data-i18n="focus.areasLabel">Areas of interest</h4>
+                <ul data-i18n-list="focus.items.0.areas">
+                  <li>AI &amp; autonomous agents</li><li>Embodied intelligence &amp; robotics</li><li>Compute &amp; semiconductors</li><li>Energy &amp; advanced materials</li><li>Life sciences &amp; synthetic biology</li><li>Space technology</li>
+                </ul>
+              </div>
+              <div class="alloc__col">
+                <h4 data-i18n="focus.lookLabel">What we look for</h4>
+                <p data-i18n="focus.items.0.look">Teams with a defensible technical edge and a chance to define a new category. We are willing to come in before the product takes shape and stay through long R&amp;D cycles.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="alloc__row" style="--pct:20">
+          <div class="rule" data-rule></div>
+          <button class="alloc__head" type="button" id="alloc-head-1" aria-expanded="false" aria-controls="alloc-body-1">
+            <span class="alloc__num"><span>20</span><sup>%</sup></span>
+            <span class="alloc__main">
+              <span class="alloc__title" data-i18n="focus.items.1.title">Advanced Consumer</span>
+              <span class="alloc__desc" data-i18n="focus.items.1.desc">Products and brands that change the way people live.</span>
+              <span class="alloc__ray" data-ray aria-hidden="true"><i></i><b></b></span>
+            </span>
+            <span class="alloc__toggle" aria-hidden="true"></span>
+          </button>
+          <div class="alloc__body" id="alloc-body-1" role="region" aria-labelledby="alloc-head-1">
+            <div class="alloc__body-in">
+              <div class="alloc__col">
+                <h4 data-i18n="focus.areasLabel">Areas of interest</h4>
+                <ul data-i18n-list="focus.items.1.areas">
+                  <li>AI-native consumer products</li><li>Smart hardware</li><li>Health &amp; longevity</li><li>Next-generation brands</li><li>Culture &amp; experiences</li>
+                </ul>
+              </div>
+              <div class="alloc__col">
+                <h4 data-i18n="focus.lookLabel">What we look for</h4>
+                <p data-i18n="focus.items.1.look">Brands driven by product strength that can travel across cycles and borders. Great consumer companies are where new technology becomes everyday life.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="alloc__row" style="--pct:10">
+          <div class="rule" data-rule></div>
+          <button class="alloc__head" type="button" id="alloc-head-2" aria-expanded="false" aria-controls="alloc-body-2">
+            <span class="alloc__num"><span>10</span><sup>%</sup></span>
+            <span class="alloc__main">
+              <span class="alloc__title" data-i18n="focus.items.2.title">Independent Creators</span>
+              <span class="alloc__desc" data-i18n="focus.items.2.desc">People who create on their own strength.</span>
+              <span class="alloc__ray" data-ray aria-hidden="true"><i></i><b></b></span>
+            </span>
+            <span class="alloc__toggle" aria-hidden="true"></span>
+          </button>
+          <div class="alloc__body" id="alloc-body-2" role="region" aria-labelledby="alloc-head-2">
+            <div class="alloc__body-in">
+              <div class="alloc__col">
+                <h4 data-i18n="focus.areasLabel">Areas of interest</h4>
+                <ul data-i18n-list="focus.items.2.areas">
+                  <li>Indie developers</li><li>Designers &amp; artists</li><li>Content &amp; knowledge creators</li><li>Open-source authors</li><li>Small studios</li>
+                </ul>
+              </div>
+              <div class="alloc__col">
+                <h4 data-i18n="focus.lookLabel">What we look for</h4>
+                <p data-i18n="focus.items.2.look">The work comes before the company. We back creators with a distinct voice and an audience already listening, with flexible structures that follow the creator’s own pace.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div class="rule" data-rule></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 管理团队 ============ -->
+  <section class="sec" id="team" aria-labelledby="team-label">
+    <div class="container">
+      <div class="rule" data-rule></div>
+      <div class="sec__grid">
+        <header class="sec__label rv"><span class="sec__n">04</span><h2 id="team-label" data-i18n="team.label">Team</h2></header>
+        <div class="sec__body">
+          <h3 class="title" data-lines data-dot data-i18n-html="team.title">The people accountable<br>for the call</h3>
+          <p class="copy rv" style="--d:.2s" data-i18n="team.lede">Partners work directly on research, decisions and post-investment support. The person you meet is the person who decides.</p>
+        </div>
+      </div>
+
+      <!-- 人物照片：给某一行加上 data-photo="assets/img/team/xxx.jpg"，
+           指针悬停在这一行时，照片会跟随指针出现。 -->
+      <ul class="roster">
+        <li class="roster__row rv" data-photo="">
+          <h4 class="roster__name" data-i18n="team.members.0.name">Xingye Shen</h4>
+          <p class="roster__role" data-i18n="team.members.0.role">Founding Partner</p>
+          <p class="roster__bio" data-i18n="team.members.0.bio">Two decades across technology investing and company building, having led early rounds in several frontier-tech companies. Leads fund strategy and major investment decisions.</p>
+        </li>
+        <li class="roster__row rv" data-photo="">
+          <h4 class="roster__name" data-i18n="team.members.1.name">Zhiwei Lu</h4>
+          <p class="roster__role" data-i18n="team.members.1.role">Partner, Advanced Technology</p>
+          <p class="roster__bio" data-i18n="team.members.1.bio">PhD in computer architecture; formerly led core R&amp;D on chip and foundation-model teams. Focuses on AI, compute and robotics.</p>
+        </li>
+        <li class="roster__row rv" data-photo="">
+          <h4 class="roster__name" data-i18n="team.members.2.name">Nanqiao Gu</h4>
+          <p class="roster__role" data-i18n="team.members.2.role">Partner, Advanced Consumer</p>
+          <p class="roster__bio" data-i18n="team.members.2.bio">A background in brand operations and consumer investing, having taken several brands from founding to global markets. Focuses on smart hardware, health and next-generation brands.</p>
+        </li>
+        <li class="roster__row rv" data-photo="">
+          <h4 class="roster__name" data-i18n="team.members.3.name">Yi’an Cheng</h4>
+          <p class="roster__role" data-i18n="team.members.3.role">Partner, Creators &amp; Platform</p>
+          <p class="roster__bio" data-i18n="team.members.3.bio">Began as an indie developer whose products have served millions of users. Runs the creator program and post-investment support.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 05 联系我们（深色） ============ -->
+  <div class="dark" id="dark">
+    <section class="sec sec--contact" id="contact" aria-labelledby="contact-label">
+      <div class="container">
+        <div class="sec__grid">
+          <header class="sec__label rv"><span class="sec__n">05</span><h2 id="contact-label" data-i18n="contact.label">Contact</h2></header>
+          <div class="sec__body">
+            <h3 class="title" data-lines data-dot data-i18n-html="contact.title">Tell us what<br>you are igniting</h3>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="contact__info rv">
+            <p class="copy" data-i18n="contact.lede">A deck, a partnership idea, or a thought that has not taken shape yet: all welcome. Every message is read by the investment team.</p>
+            <ul class="channels">
+              <li><span data-i18n="contact.channels.0.label">Pitches</span><a class="u" data-mail="pitch" href="mailto:bp@sparkunlimited.example">bp@sparkunlimited.example</a></li>
+              <li><span data-i18n="contact.channels.1.label">Investor relations</span><a class="u" data-mail="ir" href="mailto:ir@sparkunlimited.example">ir@sparkunlimited.example</a></li>
+              <li><span data-i18n="contact.channels.2.label">Media &amp; partnerships</span><a class="u" data-mail="hello" href="mailto:hello@sparkunlimited.example">hello@sparkunlimited.example</a></li>
+            </ul>
+          </div>
+
+          <div class="contact__form rv" style="--d:.1s">
+            <form class="form" id="lead-form" novalidate>
+              <div class="form__row">
+                <div class="field">
+                  <input id="f-name" name="name" type="text" autocomplete="name" required placeholder=" ">
+                  <label for="f-name" data-i18n="contact.form.name">Name</label>
+                  <span class="field__err" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                  <input id="f-company" name="company" type="text" autocomplete="organization" placeholder=" ">
+                  <label for="f-company" data-i18n="contact.form.company">Company or organization</label>
+                  <span class="field__err" aria-live="polite"></span>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="field">
+                  <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder=" ">
+                  <label for="f-email" data-i18n="contact.form.email">Email</label>
+                  <span class="field__err" aria-live="polite"></span>
+                </div>
+                <div class="field">
+                  <input id="f-phone" name="phone" type="text" autocomplete="tel" placeholder=" ">
+                  <label for="f-phone" data-i18n="contact.form.phone">Phone / WeChat (optional)</label>
+                  <span class="field__err" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <fieldset class="opts">
+                <legend data-i18n="contact.form.role">I am a</legend>
+                <div class="opts__list">
+                  <label class="opt"><input type="radio" name="role" value="founder" checked><span data-i18n="contact.form.roles.0">Founder</span></label>
+                  <label class="opt"><input type="radio" name="role" value="creator"><span data-i18n="contact.form.roles.1">Creator</span></label>
+                  <label class="opt"><input type="radio" name="role" value="investor"><span data-i18n="contact.form.roles.2">Investor</span></label>
+                  <label class="opt"><input type="radio" name="role" value="other"><span data-i18n="contact.form.roles.3">Media / other</span></label>
+                </div>
+              </fieldset>
+
+              <div class="field field--area">
+                <textarea id="f-message" name="message" rows="3" required placeholder=" "></textarea>
+                <label for="f-message" data-i18n="contact.form.message">What would you like to discuss?</label>
+                <span class="field__err" aria-live="polite"></span>
+              </div>
+
+              <!-- 防机器人：真人看不到这个输入框 -->
+              <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+              <div class="form__foot">
+                <button class="btn" type="submit">
+                  <span class="btn__label" data-i18n="contact.form.submit">Send message</span>
+                  <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+                </button>
+                <p class="form__consent" data-i18n="contact.form.consent">By submitting, you agree that we may process this information in order to reply.</p>
+              </div>
+              <p class="form__status" role="alert"></p>
+            </form>
+
+            <div class="done" hidden>
+              <h4 class="done__title" tabindex="-1"><span data-i18n="contact.done.title">Received, thank you</span><i class="dot dot--on" aria-hidden="true"></i></h4>
+              <p class="done__text" data-i18n="contact.done.text">We will read it carefully and reply using the contact details you left.</p>
+              <p class="done__demo" hidden data-i18n="contact.done.demo">Demo mode: no form endpoint is configured, so this message was not sent.</p>
+              <button class="link done__again" type="button"><span class="u" data-i18n="contact.done.again">Send another</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 页脚 ============ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="rule"></div>
+        <div class="footer__top">
+          <a class="brand" href="#top" aria-label="Spark Unlimited Investment">
+            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+              <line x1="8" y1="24" x2="30" y2="2"/>
+              <circle cx="8" cy="24" r="4.4"/>
+            </svg>
+            <span class="brand__word">Spark Unlimited <span class="brand__sub">Investment</span></span>
+          </a>
+          <nav class="footer__nav" aria-label="Footer">
+            <a class="u" href="#about" data-i18n="nav.about">About</a>
+            <a class="u" href="#mission" data-i18n="nav.mission">Mission</a>
+            <a class="u" href="#focus" data-i18n="nav.focus">Focus</a>
+            <a class="u" href="#team" data-i18n="nav.team">Team</a>
+            <a class="u" href="#contact" data-i18n="nav.contact">Contact</a>
+          </nav>
+          <a class="footer__top-link" href="#top"><span class="u" data-i18n="footer.top">Back to top</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__legal" data-i18n="footer.legal">The content of this website is for general information only and does not constitute an offer, solicitation or investment advice in respect of any security or fund interest. Private funds are available only to qualified investors as defined by applicable law. Investing involves risk; past performance is not indicative of future results.</p>
+          <p class="footer__rights">© <span id="year">2026</span> <span data-i18n="footer.rights">Spark Unlimited Investment. All rights reserved.</span></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</main>
+
+<!-- 团队照片浮层（有照片时才会出现） -->
+<div class="portrait" aria-hidden="true"></div>
+
+<script src="assets/js/config.js" defer></script>
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

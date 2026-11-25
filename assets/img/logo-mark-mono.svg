@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Spark Unlimited Investment" color="#0E0E0C">
+  <!-- Spark Unlimited 图形标（单色）。修改上面的 color 属性即可换色。 -->
+  <line x1="8" y1="24" x2="30" y2="2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="24" r="4.4" fill="currentColor"/>
+</svg>

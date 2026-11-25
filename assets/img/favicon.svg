@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Spark Unlimited 网站图标：小尺寸下加粗线条与圆点 -->
+  <rect width="64" height="64" rx="13" fill="#0E0E0C"/>
+  <line x1="20" y1="44" x2="52" y2="12" stroke="#F4F3EF" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="20" cy="44" r="9" fill="#FF4D00"/>
+</svg>

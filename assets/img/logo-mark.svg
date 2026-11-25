@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Spark Unlimited Investment">
+  <!-- Spark Unlimited 图形标（浅色背景用）：一个点，和从它出发的射线 -->
+  <line x1="8" y1="24" x2="30" y2="2" stroke="#0E0E0C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="24" r="4.4" fill="#FF4D00"/>
+</svg>
