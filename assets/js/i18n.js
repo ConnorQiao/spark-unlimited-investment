@@ -1,7 +1,6 @@
 /* Spark Unlimited Investment — 文案（中文 / English）
  * 页面上的全部文字都以这里为准：加载时会按当前语言写入带 data-i18n 的元素。
  * 标题里的 <br> 用来控制换行；标题末尾不写句号，页面会接上那枚橙色圆点。
- * hero.ledeShort 是手机上用的短版首屏说明，改 hero.lede 时记得一起看。
  * 页面总是以英文打开；中文只在访客点「中」或地址带 ?lang=zh 时出现。
  */
 window.SPARK_I18N = {
@@ -15,15 +14,13 @@ window.SPARK_I18N = {
     nav: { about: '介绍', mission: '使命愿景', focus: '投资方向', team: '管理团队', contact: '联系我们' },
     hero: {
       title: '让星火<br>成为无限',
-      lede: 'Spark Unlimited Investment 是专注早期与成长期的风险投资机构。我们在想法刚刚点燃的时候入场，以长期资本陪伴先进科技、先进消费与独立创作者。',
-      ledeShort: '专注早期与成长期的风险投资机构，在想法刚刚点燃的时候入场。',
+      lede: '专注早期与成长期的风险投资机构，在想法刚刚点燃的时候入场。',
       cta: '联系我们',
       more: '了解投资方向'
     },
     about: {
       label: '介绍',
       statement: '我们相信，改变世界的公司最初都只是星火：尚未被验证的技术，还没有品类名的产品，独自动手的创作者。',
-      p: '我们的工作是尽早认出它，然后提供足够长久的资本、资源与耐心，让它有机会燃成无限。',
       stages: ['星火', '点燃', '生长', '无限'],
       facts: [
         { label: '投资阶段', value: '种子轮至 B 轮', note: '最早可在产品诞生之前进入' },
@@ -37,19 +34,11 @@ window.SPARK_I18N = {
       missionLabel: '使命',
       mission: '在星火最微弱的时候，给它时间、资本与信任。',
       visionLabel: '愿景',
-      vision: '可能性没有上限的世界：科技拓宽边界，产品更新生活，个体也能创造伟大的事物。',
-      principlesTitle: '信条',
-      principles: [
-        { title: '早于共识', text: '最好的机会出现在被命名之前。数据不足的时候，我们凭研究与判断做决定。' },
-        { title: '长期在场', text: '我们以十年为单位思考。顺境时不抢功，逆境时不离席。' },
-        { title: '创始人优先', text: '公司属于创造它的人。我们提供资源与视角，把方向盘留给创始人。' },
-        { title: '独立判断', text: '不追热点，不迷信标签。每笔投资都由合伙人亲自研究、亲自负责。' }
-      ]
+      vision: '可能性没有上限的世界：科技拓宽边界，产品更新生活，个体也能创造伟大的事物。'
     },
     focus: {
       label: '投资方向',
       title: '资本的配比，<br>就是我们的判断',
-      lede: '组合按 70 / 20 / 10 配置。重心放在前沿科技，同时为改变生活方式的产品与品牌、以及独立创造的个人留出位置。',
       areasLabel: '关注领域',
       lookLabel: '我们寻找',
       items: [
@@ -80,7 +69,6 @@ window.SPARK_I18N = {
     team: {
       label: '管理团队',
       title: '为判断负责的人',
-      lede: '合伙人直接参与项目的研究、决策与投后。你见到的人，就是做决定的人。',
       // alt 是英文名，以小字跟在中文名后面
       members: [
         { name: '隋国栋', alt: 'Guodong Sui', role: '合伙人' },
@@ -90,7 +78,6 @@ window.SPARK_I18N = {
     contact: {
       label: '联系我们',
       title: '告诉我们，<br>你正在点燃什么',
-      lede: '商业计划书、合作意向，或是尚未成形的想法，都欢迎留言。所有留言都由投资团队亲自阅读。',
       channels: [
         { label: '项目投递' },
         { label: '投资者关系' },
@@ -136,15 +123,13 @@ window.SPARK_I18N = {
     nav: { about: 'About', mission: 'Mission', focus: 'Focus', team: 'Team', contact: 'Contact' },
     hero: {
       title: 'Where sparks<br>become unlimited',
-      lede: 'Spark Unlimited Investment is an early and growth-stage venture capital firm. We invest at the moment of ignition, backing advanced technology, advanced consumer and independent creators with patient capital.',
-      ledeShort: 'An early and growth-stage venture capital firm, investing at the moment of ignition.',
+      lede: 'An early and growth-stage venture capital firm, investing at the moment of ignition.',
       cta: 'Get in touch',
       more: 'See our focus'
     },
     about: {
       label: 'About',
       statement: 'We believe every company that changes the world begins as a spark: a technology not yet proven, a product without a category name, a creator working alone.',
-      p: 'Our job is to recognize it early, then bring capital, resources and patience for long enough that it can become unlimited.',
       stages: ['Spark', 'Ignite', 'Grow', 'Unlimited'],
       facts: [
         { label: 'Stage', value: 'Seed to Series B', note: 'As early as pre-product' },
@@ -158,19 +143,11 @@ window.SPARK_I18N = {
       missionLabel: 'Mission',
       mission: 'To give the faintest sparks what they need most: time, capital and conviction.',
       visionLabel: 'Vision',
-      vision: 'A world with no ceiling on what is possible, where technology widens the frontier, products renew everyday life, and one person is enough to build something great.',
-      principlesTitle: 'Principles',
-      principles: [
-        { title: 'Before consensus', text: 'The best opportunities appear before they have a name. When the data is thin, we decide on research and judgment.' },
-        { title: 'Here for the long run', text: 'We think in decades. We take no credit in good times and keep our seat in hard ones.' },
-        { title: 'Founders first', text: 'A company belongs to the people who build it. We bring resources and perspective, and leave the wheel with the founder.' },
-        { title: 'Independent judgment', text: 'No chasing heat, no faith in labels. Every investment is researched and owned by a partner.' }
-      ]
+      vision: 'A world with no ceiling on what is possible, where technology widens the frontier, products renew everyday life, and one person is enough to build something great.'
     },
     focus: {
       label: 'Investment Focus',
       title: 'Our allocation<br>is our conviction',
-      lede: 'The portfolio is built 70 / 20 / 10. Its weight sits in frontier technology, with room kept for the products and brands that change how people live, and for individuals who create on their own.',
       areasLabel: 'Areas of interest',
       lookLabel: 'What we look for',
       items: [
@@ -200,7 +177,6 @@ window.SPARK_I18N = {
     team: {
       label: 'Team',
       title: 'The people accountable<br>for the call',
-      lede: 'Partners work directly on research, decisions and post-investment support. The person you meet is the person who decides.',
       // 英文页只显示英文名。alt 要留空字符串，从中文切回英文时才会清掉那行小字
       members: [
         { name: 'Guodong Sui', alt: '', role: 'Partner' },
@@ -210,7 +186,6 @@ window.SPARK_I18N = {
     contact: {
       label: 'Contact',
       title: 'Tell us what<br>you are igniting',
-      lede: 'A deck, a partnership idea, or a thought that has not taken shape yet: all welcome. Every message is read by the investment team.',
       channels: [
         { label: 'Pitches' },
         { label: 'Investor relations' },

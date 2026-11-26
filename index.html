@@ -94,8 +94,7 @@
     <div class="container hero__grid">
       <div class="hero__copy">
         <h1 class="hero__title" id="hero-title" data-lines data-dot data-i18n-html="hero.title">Where sparks<br>become unlimited</h1>
-        <p class="hero__lede hide-phone rv" style="--d:.45s" data-i18n="hero.lede">Spark Unlimited Investment is an early and growth-stage venture capital firm. We invest at the moment of ignition, backing advanced technology, advanced consumer and independent creators with patient capital.</p>
-        <p class="hero__lede only-phone rv" style="--d:.45s" data-i18n="hero.ledeShort">An early and growth-stage venture capital firm, investing at the moment of ignition.</p>
+        <p class="hero__lede rv" style="--d:.45s" data-i18n="hero.lede">An early and growth-stage venture capital firm, investing at the moment of ignition.</p>
         <div class="hero__cta rv" style="--d:.6s">
           <a class="btn" href="#contact"><span data-i18n="hero.cta">Get in touch</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="hero__more" href="#focus"><span class="u" data-i18n="hero.more">See our focus</span></a>
@@ -105,16 +104,13 @@
 
     <div class="hero__art" aria-hidden="true">
       <svg class="ill" data-art viewBox="0 0 600 700" preserveAspectRatio="xMinYMax slice" style="--ox:90px;--oy:610px;--d:.25s">
-        <!-- 同心弧：一轮一轮长大 -->
+        <!-- 同心弧：一轮一轮长大（外圈留空，给画面留白） -->
         <path class="s s--rule grow" d="M90 500A110 110 0 0 1 200 610"/>
         <path class="s s--rule grow" style="--k:1" d="M90 400A210 210 0 0 1 300 610"/>
         <path class="s s--soft dash grow" style="--k:2" d="M90 300A310 310 0 0 1 400 610"/>
         <path class="s s--soft dash grow" style="--k:3" d="M90 200A410 410 0 0 1 500 610"/>
-        <path class="s s--soft dash grow" style="--k:4" d="M90 100A510 510 0 0 1 600 610"/>
-        <path class="s s--soft dash grow" style="--k:5" d="M90 0A610 610 0 0 1 700 610"/>
         <!-- 射线：有的停在某一轮，有的一直伸出画面 -->
         <g class="tilt" data-tilt>
-          <line class="s s--soft grow" style="--k:1" x1="90" y1="610" x2="229.2" y2="-380.3"/>
           <line class="s grow" style="--k:2" x1="90" y1="610" x2="180.6" y2="313.5"/>
           <line class="s s--soft grow" style="--k:3" x1="90" y1="610" x2="528.4" y2="-288.8"/>
           <line class="s grow" style="--k:4" x1="90" y1="610" x2="325.2" y2="274.1"/>
@@ -130,12 +126,8 @@
           <circle class="k pop" style="--k:5" cx="262" cy="489.5" r="5"/>
           <circle class="h pop" style="--k:7" cx="482.1" cy="490.1" r="6"/>
           <circle class="k pop" style="--k:8" cx="397" cy="566.8" r="3.5"/>
-          <circle class="k pop" style="--k:6" cx="548.4" cy="386.4" r="3.5"/>
-          <circle class="k pop" style="--k:3" cx="313.6" cy="151.6" r="3.5"/>
-          <circle class="k pop" style="--k:9" cx="521.3" cy="178.7" r="3"/>
           <g class="pop" style="--k:6"><circle class="o" cx="379.9" cy="320.1" r="7"/><circle class="s s--spark" cx="379.9" cy="320.1" r="15"/></g>
         </g>
-        <path class="s s--soft fade" style="--k:6" d="M505 262v16M497 270h16M585 233v14M578 240h14M420 133v14M413 140h14"/>
         <circle class="s s--spark pulse" cx="90" cy="610" r="14"/>
         <circle class="o pop" style="--k:-6" cx="90" cy="610" r="14"/>
       </svg>
@@ -150,7 +142,6 @@
         <header class="sec__label rv"><span class="sec__n">01</span><h2 id="about-label" data-i18n="about.label">About</h2></header>
         <div class="sec__body">
           <p class="lead rv" data-i18n="about.statement">We believe every company that changes the world begins as a spark: a technology not yet proven, a product without a category name, a creator working alone.</p>
-          <p class="copy hide-phone rv" style="--d:.1s" data-i18n="about.p">Our job is to recognize it early, then bring capital, resources and patience for long enough that it can become unlimited.</p>
 
           <!-- 从星火到无限：同一个圆点，四个阶段 -->
           <figure class="ignite">
@@ -293,54 +284,6 @@
               <p class="duo__text" data-i18n="mission.vision">A world with no ceiling on what is possible, where technology widens the frontier, products renew everyday life, and one person is enough to build something great.</p>
             </div>
           </div>
-
-          <h3 class="creed__title rv" data-i18n="mission.principlesTitle">Principles</h3>
-          <ol class="creed">
-            <li class="creed__item rv">
-              <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
-                <g class="fade"><circle class="g" cx="7" cy="14" r="1.9"/><circle class="g" cx="7" cy="26" r="1.9"/><circle class="g" cx="12.5" cy="20" r="1.9"/><circle class="g" cx="13" cy="11" r="1.9"/><circle class="g" cx="13" cy="29" r="1.9"/></g>
-                <path class="s draw" style="--k:1" pathLength="1" d="M18 20H28"/>
-                <circle class="o pop" cx="32.5" cy="20" r="3.2"/>
-              </svg>
-              <div>
-                <h4><span class="creed__n" aria-hidden="true">01</span><span data-i18n="mission.principles.0.title">Before consensus</span></h4>
-                <p data-i18n="mission.principles.0.text">The best opportunities appear before they have a name. When the data is thin, we decide on research and judgment.</p>
-              </div>
-            </li>
-            <li class="creed__item rv" style="--d:.07s">
-              <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
-                <path class="s s--soft draw" pathLength="1" d="M4 20C7 11 11 11 14 20S21 29 24 20S31 11 34 20"/>
-                <path class="s draw" style="--k:2" pathLength="1" d="M4 20H32"/>
-                <circle class="o pop" cx="35.5" cy="20" r="2.8"/>
-              </svg>
-              <div>
-                <h4><span class="creed__n" aria-hidden="true">02</span><span data-i18n="mission.principles.1.title">Here for the long run</span></h4>
-                <p data-i18n="mission.principles.1.text">We think in decades. We take no credit in good times and keep our seat in hard ones.</p>
-              </div>
-            </li>
-            <li class="creed__item rv" style="--d:.14s">
-              <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
-                <circle class="s draw" pathLength="1" cx="20" cy="20" r="13"/>
-                <path class="s draw" style="--k:2" pathLength="1" d="M20 17V7M17.4 21.5L8.7 26.5M22.6 21.5L31.3 26.5"/>
-                <circle class="o pop" cx="20" cy="20" r="3"/>
-              </svg>
-              <div>
-                <h4><span class="creed__n" aria-hidden="true">03</span><span data-i18n="mission.principles.2.title">Founders first</span></h4>
-                <p data-i18n="mission.principles.2.text">A company belongs to the people who build it. We bring resources and perspective, and leave the wheel with the founder.</p>
-              </div>
-            </li>
-            <li class="creed__item rv" style="--d:.21s">
-              <svg class="ico" data-art viewBox="0 0 40 40" aria-hidden="true">
-                <path class="s s--soft draw" pathLength="1" d="M4 25H26M4 30H26M4 35H26"/>
-                <path class="s draw" style="--k:2" pathLength="1" d="M4 20H14L28 8"/>
-                <circle class="o pop" cx="31" cy="5.5" r="2.8"/>
-              </svg>
-              <div>
-                <h4><span class="creed__n" aria-hidden="true">04</span><span data-i18n="mission.principles.3.title">Independent judgment</span></h4>
-                <p data-i18n="mission.principles.3.text">No chasing heat, no faith in labels. Every investment is researched and owned by a partner.</p>
-              </div>
-            </li>
-          </ol>
         </div>
       </div>
     </div>
@@ -354,7 +297,6 @@
         <header class="sec__label rv"><span class="sec__n">03</span><h2 id="focus-label" data-i18n="focus.label">Investment Focus</h2></header>
         <div class="sec__body">
           <h3 class="title" data-lines data-dot data-i18n-html="focus.title">Our allocation<br>is our conviction</h3>
-          <p class="copy hide-phone rv" style="--d:.2s" data-i18n="focus.lede">The portfolio is built 70 / 20 / 10. Its weight sits in frontier technology, with room kept for the products and brands that change how people live, and for individuals who create on their own.</p>
         </div>
       </div>
 
@@ -485,7 +427,6 @@
         <header class="sec__label rv"><span class="sec__n">04</span><h2 id="team-label" data-i18n="team.label">Team</h2></header>
         <div class="sec__body">
           <h3 class="title" data-lines data-dot data-i18n-html="team.title">The people accountable<br>for the call</h3>
-          <p class="copy hide-phone rv" style="--d:.2s" data-i18n="team.lede">Partners work directly on research, decisions and post-investment support. The person you meet is the person who decides.</p>
         </div>
       </div>
 
@@ -533,7 +474,6 @@
 
         <div class="contact">
           <div class="contact__info rv">
-            <p class="copy hide-phone" data-i18n="contact.lede">A deck, a partnership idea, or a thought that has not taken shape yet: all welcome. Every message is read by the investment team.</p>
             <ul class="channels">
               <li><span data-i18n="contact.channels.0.label">Pitches</span><a class="u" data-mail="pitch" href="mailto:bp@sparkunlimited.example">bp@sparkunlimited.example</a></li>
               <li><span data-i18n="contact.channels.1.label">Investor relations</span><a class="u" data-mail="ir" href="mailto:ir@sparkunlimited.example">ir@sparkunlimited.example</a></li>
