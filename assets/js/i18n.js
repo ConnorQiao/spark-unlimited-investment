@@ -25,7 +25,7 @@ window.SPARK_I18N = {
       facts: [
         { label: '投资阶段', value: '种子轮至 B 轮', note: '最早可在产品诞生之前进入' },
         { label: '投资角色', value: '领投与联合领投', note: '重仓看准的公司，并持续加注' },
-        { label: '持有周期', value: '以十年为尺度', note: '不因短期波动调整判断' },
+        { label: '持有周期', value: '着眼长期', note: '不因短期波动调整判断' },
         { label: '决策方式', value: '合伙人直接决策', note: '没有层层上报的流程' }
       ]
     },
@@ -134,7 +134,7 @@ window.SPARK_I18N = {
       facts: [
         { label: 'Stage', value: 'Seed to Series B', note: 'As early as pre-product' },
         { label: 'Role', value: 'Lead and co-lead', note: 'Concentrated positions, with reserves to follow on' },
-        { label: 'Horizon', value: 'Measured in decades', note: 'Unmoved by short-term noise' },
+        { label: 'Horizon', value: 'Long-term focus', note: 'Unmoved by short-term noise' },
         { label: 'Decisions', value: 'Made by partners', note: 'No layers between you and the answer' }
       ]
     },
