@@ -56,9 +56,13 @@
 
     $$('[data-i18n]').forEach(function (el) { var v = t(el.getAttribute('data-i18n')); if (typeof v === 'string') el.textContent = v; });
     $$('[data-i18n-html]').forEach(function (el) { var v = t(el.getAttribute('data-i18n-html')); if (typeof v === 'string') el.innerHTML = v; });
+    // 列表条目可以是字符串，也可以是 { t: 名称, d: 举例说明 }，说明以小字排在名称下面
     $$('[data-i18n-list]').forEach(function (el) {
       var v = t(el.getAttribute('data-i18n-list'));
-      if (Array.isArray(v)) el.innerHTML = v.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('');
+      if (Array.isArray(v)) el.innerHTML = v.map(function (s) {
+        if (s && typeof s === 'object') return '<li>' + esc(s.t) + (s.d ? '<small>' + esc(s.d) + '</small>' : '') + '</li>';
+        return '<li>' + esc(s) + '</li>';
+      }).join('');
     });
     $$('[data-i18n-attr]').forEach(function (el) {
       el.getAttribute('data-i18n-attr').split(';').forEach(function (pair) {

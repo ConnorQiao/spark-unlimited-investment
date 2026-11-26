@@ -56,19 +56,23 @@ window.SPARK_I18N = {
         {
           title: '先进科技',
           desc: '推动可能性边界的前沿科技，是组合的核心。',
-          areas: ['人工智能与智能体', '具身智能与机器人', '算力与半导体', '能源与新材料', '生命科学与合成生物', '空间技术'],
+          // 前两类是基金的正式表述（包括但不限于），小字是举例
+          areas: [
+            { t: 'AI 产业链', d: '算力与芯片、模型与智能体、AI 应用' },
+            { t: '未来产业', d: '具身智能与机器人、能源与新材料、生命科学与合成生物、空间技术' }
+          ],
           look: '技术壁垒清晰、有机会定义新品类的团队。我们愿意在产品成形之前进入，并陪伴漫长的研发周期。'
         },
         {
           title: '先进消费',
           desc: '改变人们生活方式的产品与品牌。',
-          areas: ['AI 原生消费产品', '智能硬件', '健康与长寿', '新一代品牌', '文化与体验'],
+          areas: ['高端品牌', '智能硬件', '高端制造', 'AI 原生消费产品', '健康与长寿', '文化与体验'],
           look: '由产品力驱动、能够跨越周期与地域的品牌。好的消费公司，是新技术变成日常的那一环。'
         },
         {
           title: '独立创作者',
           desc: '以个人之力创造的人。',
-          areas: ['独立开发者', '设计师与艺术家', '内容与知识创作者', '开源作者', '小型工作室'],
+          areas: ['独立艺术家', '独立音乐人', '独立手艺人', '独立游戏工作室', '独立制表师', '独立开发者', '内容与知识创作者'],
           look: '作品先于公司。我们支持有鲜明个人表达、已经拥有受众的创作者，形式灵活，以创作者的节奏为准。'
         }
       ]
@@ -77,9 +81,11 @@ window.SPARK_I18N = {
       label: '管理团队',
       title: '为判断负责的人',
       lede: '合伙人直接参与项目的研究、决策与投后。你见到的人，就是做决定的人。',
+      // alt 是名字的另一种写法，以小字跟在名字后面；altLang 是它的语言
+      altLang: 'en',
       members: [
-        { name: 'Yangke Sun', role: '合伙人' },
-        { name: '苏瑜（Sophia）', role: '合伙人' }
+        { name: '隋国栋', alt: 'Guodong Sui', role: '合伙人' },
+        { name: '苏瑜', alt: 'Sophia Su', role: '合伙人' }
       ]
     },
     contact: {
@@ -172,19 +178,22 @@ window.SPARK_I18N = {
         {
           title: 'Advanced Technology',
           desc: 'Frontier technology that pushes the boundary of the possible. The core of the portfolio.',
-          areas: ['AI & autonomous agents', 'Embodied intelligence & robotics', 'Compute & semiconductors', 'Energy & advanced materials', 'Life sciences & synthetic biology', 'Space technology'],
+          areas: [
+            { t: 'The AI value chain', d: 'Compute and chips, models and agents, AI applications' },
+            { t: 'Future industries', d: 'Embodied AI and robotics, energy and new materials, life sciences and synthetic biology, space technology' }
+          ],
           look: 'Teams with a defensible technical edge and a chance to define a new category. We are willing to come in before the product takes shape and stay through long R&D cycles.'
         },
         {
           title: 'Advanced Consumer',
           desc: 'Products and brands that change the way people live.',
-          areas: ['AI-native consumer products', 'Smart hardware', 'Health & longevity', 'Next-generation brands', 'Culture & experiences'],
+          areas: ['Premium brands', 'Smart hardware', 'Advanced manufacturing', 'AI-native consumer products', 'Health & longevity', 'Culture & experiences'],
           look: 'Brands driven by product strength that can travel across cycles and borders. Great consumer companies are where new technology becomes everyday life.'
         },
         {
           title: 'Independent Creators',
           desc: 'People who create on their own strength.',
-          areas: ['Indie developers', 'Designers & artists', 'Content & knowledge creators', 'Open-source authors', 'Small studios'],
+          areas: ['Independent artists', 'Independent musicians', 'Independent artisans', 'Independent game studios', 'Independent watchmakers', 'Independent developers', 'Content & knowledge creators'],
           look: 'The work comes before the company. We back creators with a distinct voice and an audience already listening, with flexible structures that follow the creator’s own pace.'
         }
       ]
@@ -193,9 +202,10 @@ window.SPARK_I18N = {
       label: 'Team',
       title: 'The people accountable<br>for the call',
       lede: 'Partners work directly on research, decisions and post-investment support. The person you meet is the person who decides.',
+      altLang: 'zh-CN',
       members: [
-        { name: 'Yangke Sun', role: 'Partner' },
-        { name: 'Sophia Su', role: 'Partner' }
+        { name: 'Guodong Sui', alt: '隋国栋', role: 'Partner' },
+        { name: 'Sophia Su', alt: '苏瑜', role: 'Partner' }
       ]
     },
     contact: {
