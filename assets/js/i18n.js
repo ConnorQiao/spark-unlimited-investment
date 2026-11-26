@@ -81,8 +81,7 @@ window.SPARK_I18N = {
       label: '管理团队',
       title: '为判断负责的人',
       lede: '合伙人直接参与项目的研究、决策与投后。你见到的人，就是做决定的人。',
-      // alt 是名字的另一种写法，以小字跟在名字后面；altLang 是它的语言
-      altLang: 'en',
+      // alt 是英文名，以小字跟在中文名后面
       members: [
         { name: '隋国栋', alt: 'Guodong Sui', role: '合伙人' },
         { name: '苏瑜', alt: 'Sophia Su', role: '合伙人' }
@@ -202,10 +201,10 @@ window.SPARK_I18N = {
       label: 'Team',
       title: 'The people accountable<br>for the call',
       lede: 'Partners work directly on research, decisions and post-investment support. The person you meet is the person who decides.',
-      altLang: 'zh-CN',
+      // 英文页只显示英文名。alt 要留空字符串，从中文切回英文时才会清掉那行小字
       members: [
-        { name: 'Guodong Sui', alt: '隋国栋', role: 'Partner' },
-        { name: 'Sophia Su', alt: '苏瑜', role: 'Partner' }
+        { name: 'Guodong Sui', alt: '', role: 'Partner' },
+        { name: 'Sophia Su', alt: '', role: 'Partner' }
       ]
     },
     contact: {

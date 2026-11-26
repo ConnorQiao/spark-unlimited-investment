@@ -84,7 +84,7 @@ tools/portrait.swift    合伙人照片的处理工具（抠图、统一背景�
 
 ## 管理团队
 
-名字和职务在 `assets/js/i18n.js` 的 `team.members`（中英文各一份），`index.html` 里每人一个 `.person`。`alt` 是名字的另一种写法，以小字跟在名字后面：中文页显示英文名，英文页显示中文名。
+名字和职务在 `assets/js/i18n.js` 的 `team.members`（中英文各一份），`index.html` 里每人一个 `.person`。中文页的名字后面以小字跟英文名（`alt`）；英文页只显示英文名，`alt` 留空字符串。
 
 照片在 `assets/img/team/`，720 × 720，2026 年 11 月由项目方提供原图。放到这里时统一做了以下处理，人物本身没有改动：
 
